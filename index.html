@@ -94,6 +94,18 @@
     padding: 0 24px;
   }
 
+  @media (max-width: 640px) {
+    .container {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .container {
+      padding: 0 16px;
+    }
+  }
+
   /* ===== Header ===== */
   header {
     position: fixed;
@@ -189,6 +201,12 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-medium);
     z-index: 1;
+    /* Touch target minimum 44x44px */
+    min-height: 44px;
+    min-width: 44px;
+    /* Améliorer le feedback tactile */
+    -webkit-tap-highlight-color: rgba(10, 10, 10, 0.1);
+    touch-action: manipulation;
   }
 
   .btn::before {
@@ -213,7 +231,16 @@
   }
 
   .btn:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.98);
+    transition: transform 0.1s;
+  }
+
+  /* Feedback tactile amélioré pour mobile */
+  @media (hover: none) and (pointer: coarse) {
+    .btn:active {
+      transform: scale(0.95);
+      opacity: 0.9;
+    }
   }
 
   .btn-ghost {
@@ -892,6 +919,15 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    /* Touch-friendly sur mobile */
+    -webkit-tap-highlight-color: rgba(10, 10, 10, 0.05);
+  }
+
+  @media (max-width: 640px) {
+    .feature-card {
+      padding: 28px 24px;
+      border-radius: 12px;
+    }
   }
 
   .feature-card::before {
@@ -937,6 +973,15 @@
     box-shadow: var(--shadow-medium);
     backdrop-filter: var(--blur-glass);
     -webkit-backdrop-filter: var(--blur-glass);
+  }
+
+  @media (max-width: 640px) {
+    .gamebox {
+      padding: 28px 24px;
+      border-radius: 16px;
+      position: static;
+      margin-top: 0;
+    }
   }
 
   .progress-header {
@@ -1038,6 +1083,18 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    /* Touch target minimum */
+    min-height: 48px;
+    -webkit-tap-highlight-color: rgba(10, 10, 10, 0.1);
+    touch-action: manipulation;
+  }
+
+  @media (max-width: 640px) {
+    .quiz-btn {
+      padding: 16px 20px;
+      min-height: 52px;
+      font-size: 15px;
+    }
   }
 
   .quiz-btn::before {
@@ -1058,6 +1115,13 @@
   .quiz-btn:hover {
     border-color: rgba(10, 10, 10, 0.2);
     transform: translateX(4px);
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .quiz-btn:active {
+      transform: scale(0.98);
+      background: rgba(10, 10, 10, 0.05);
+    }
   }
 
   .quiz-btn.selected {
@@ -1088,6 +1152,14 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    -webkit-tap-highlight-color: rgba(10, 10, 10, 0.05);
+  }
+
+  @media (max-width: 640px) {
+    .testimonial-card {
+      padding: 28px 24px;
+      border-radius: 12px;
+    }
   }
 
   .testimonial-card::before {
@@ -1159,6 +1231,13 @@
     border: 1px solid rgba(10, 10, 10, 0.08);
     border-radius: 24px;
     text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .rarity-container {
+      padding: 36px 24px;
+      border-radius: 16px;
+    }
   }
 
   .rarity-header h3 {
@@ -1326,6 +1405,23 @@
     text-align: center;
     border-top: 1px solid rgba(10, 10, 10, 0.06);
     background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(250,250,250,0.5) 100%);
+  }
+
+  @media (max-width: 640px) {
+    footer {
+      padding: 60px 20px 32px;
+    }
+
+    .footer-text {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .copyright {
+      font-size: 12px;
+      margin-top: 24px;
+      padding-top: 24px;
+    }
   }
 
   .footer-content {
@@ -1710,20 +1806,45 @@
 
   @media (max-width: 640px) {
     .modal-container {
-      padding: 32px 24px;
-      max-width: 100%;
+      padding: 36px 24px;
+      max-width: calc(100% - 32px);
+      margin: 0 16px;
+      border-radius: 16px;
+    }
+
+    .modal-header {
+      margin-bottom: 28px;
     }
 
     .modal-title {
-      font-size: 20px;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .modal-subtitle {
+      font-size: 15px;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .modal-input {
+      padding: 16px 18px;
+      font-size: 16px;
+      min-height: 52px;
+      border-radius: 10px;
+    }
+
+    .modal-btn {
+      padding: 18px 24px;
+      font-size: 16px;
+      min-height: 56px;
+      border-radius: 10px;
+      width: 100%;
     }
 
     .modal-actions {
       flex-direction: column;
-    }
-
-    .modal-btn {
-      width: 100%;
+      gap: 12px;
     }
   }
 
@@ -1795,12 +1916,25 @@
     /* Optimisation pour petits écrans */
     body {
       scroll-snap-type: y mandatory;
+      font-size: 16px; /* Taille de base optimale pour mobile */
+      line-height: 1.6;
     }
 
     section {
-      padding: 60px 0;
+      padding: 64px 0;
       scroll-snap-align: start;
       scroll-snap-stop: always;
+    }
+
+    /* Améliorer la lisibilité globale */
+    p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    /* Espacements optimisés entre éléments */
+    * + * {
+      margin-top: 0;
     }
 
     .hero {
@@ -1823,8 +1957,10 @@
     }
 
     .hero-lead {
-      font-size: 16px;
-      margin-bottom: 32px;
+      font-size: 17px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+      padding: 0 8px;
     }
 
     .hero-ctas {
@@ -1835,7 +1971,12 @@
 
     .hero-ctas .btn {
       width: 100%;
-      padding: 16px 24px;
+      padding: 18px 24px;
+      font-size: 16px;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-stats {
@@ -1846,11 +1987,12 @@
     }
 
     .stat-item {
-      font-size: 14px;
+      font-size: 15px;
+      gap: 10px;
     }
 
     .stat-number {
-      font-size: 18px;
+      font-size: 20px;
     }
 
     /* Désactiver certaines animations sur très petits écrans */
@@ -1875,17 +2017,20 @@
 
     /* Sections optimisées */
     .section-header {
-      margin-bottom: 40px;
+      margin-bottom: 48px;
       padding: 0 16px;
     }
 
     .section-header p {
-      font-size: 15px;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-top: 12px;
     }
 
     .feature-card {
-      padding: 24px;
-      margin-bottom: 20px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+      border-radius: 12px;
     }
 
     .feature-card h3 {
@@ -1895,6 +2040,8 @@
 
     .feature-card p {
       font-size: 15px;
+      line-height: 1.7;
+      margin-top: 8px;
     }
 
     .testimonials-grid {
@@ -1903,11 +2050,18 @@
     }
 
     .testimonial-card {
-      padding: 24px;
+      padding: 28px 24px;
+      border-radius: 12px;
     }
 
     .testimonial-text {
       font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-author {
+      font-size: 13px;
     }
 
     .engagement-btns {
@@ -1917,10 +2071,14 @@
 
     .engagement-btns .btn {
       width: 100%;
+      padding: 18px 24px;
+      font-size: 16px;
+      min-height: 56px;
     }
 
     .rarity-container {
-      padding: 32px 20px;
+      padding: 36px 24px;
+      border-radius: 16px;
     }
 
     /* Optimiser les espacements */
@@ -1960,19 +2118,38 @@
   /* Optimisation pour très petits écrans */
   @media (max-width: 375px) {
     .hero {
-      padding: 50px 12px 30px;
+      padding: 56px 16px 40px;
     }
 
     section {
-      padding: 50px 0;
+      padding: 56px 0;
     }
 
     .container {
-      padding: 0 12px;
+      padding: 0 16px;
     }
 
     h1 {
       font-size: 28px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .hero-lead {
+      font-size: 16px;
+    }
+
+    .section-header p {
+      font-size: 15px;
     }
   }
 
