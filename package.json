@@ -1,0 +1,18 @@
+{
+  "name": "smartbanker-landing",
+  "version": "1.0.0",
+  "description": "Landing page Web3 pour professionnels RH & acteurs financiers",
+  "scripts": {
+    "start": "npx serve . -p 8000",
+    "dev": "npx serve . -p 8000"
+  },
+  "keywords": [
+    "web3",
+    "landing-page",
+    "finance",
+    "rh"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
