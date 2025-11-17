@@ -133,10 +133,13 @@
   padding: 3rem 0;
   overflow-y: auto;
   height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .documentation__container {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -334,6 +337,8 @@
 
   .documentation__content {
     margin-left: 240px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -356,6 +361,8 @@
     padding: 2rem 0;
     height: auto;
     overflow-y: visible;
+    display: flex;
+    justify-content: center;
   }
 
   .documentation__container {
