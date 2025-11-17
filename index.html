@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Smartbanker — Rejoins la révolution</title>
-<meta name="description" content="Smartbanker — réseau Web3 pour RH & finance. Réserve ta place fondatrice.">
+<title>Smartbanker — Join the revolution</title>
+<meta name="description" content="Smartbanker — Web3 network for HR & finance. Reserve your founder pass.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -298,7 +298,7 @@
     /* Touch target minimum 44x44px */
     min-height: 44px;
     min-width: 44px;
-    /* Améliorer le feedback tactile */
+    /* Improve tactile feedback */
     -webkit-tap-highlight-color: rgba(10, 10, 10, 0.1);
     touch-action: manipulation;
   }
@@ -329,7 +329,7 @@
     transition: transform 0.1s;
   }
 
-  /* Feedback tactile amélioré pour mobile */
+  /* Enhanced tactile feedback for mobile */
   @media (hover: none) and (pointer: coarse) {
     .btn:active {
       transform: scale(0.95);
@@ -365,7 +365,7 @@
   /* ===== Hero Section ===== */
   .hero {
     min-height: 100vh;
-    min-height: 100dvh; /* Support pour mobile */
+    min-height: 100dvh; /* Mobile support */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -377,7 +377,7 @@
     scroll-snap-stop: always;
   }
 
-  /* Fond gradient animé hypnotique */
+  /* Hypnotic animated gradient background */
   .hero::before {
     content: '';
     position: absolute;
@@ -425,7 +425,7 @@
     }
   }
 
-  /* Réseau de particules connectées - Effet neuronal */
+  /* Connected particle network - neural effect */
   .hero-particles {
     position: absolute;
     top: 0;
@@ -645,7 +645,7 @@
     }
   }
 
-  /* Formes géométriques morphing - Effet organique */
+  /* Morphing geometric shapes - organic effect */
   .hero-shapes {
     position: absolute;
     top: 0;
@@ -725,7 +725,7 @@
     }
   }
 
-  /* Grille perspective animée */
+  /* Animated perspective grid */
   .hero-grid {
     position: absolute;
     top: 0;
@@ -759,7 +759,7 @@
     }
   }
 
-  /* Lignes de scan animées */
+  /* Animated scan lines */
   .hero-scan {
     position: absolute;
     top: 0;
@@ -942,7 +942,7 @@
     }
   }
 
-  /* Optimisation performance mobile */
+  /* Mobile performance optimizations */
   @media (max-width: 968px) {
     section {
       transform: translateZ(0); /* Force GPU acceleration */
@@ -950,13 +950,13 @@
       -webkit-backface-visibility: hidden;
     }
 
-    /* Espacement spécial entre hero et première section */
+    /* Special spacing between hero and first section */
     .hero + section {
       margin-top: 0;
       padding-top: 80px;
     }
 
-    /* Transition visuelle entre hero et section suivante */
+    /* Visual transition between hero and next section */
     .hero + section::before {
       content: '';
       position: absolute;
@@ -1639,13 +1639,13 @@
       margin-right: 6px;
     }
 
-    /* Masquer les toasts sur très petits écrans ou si l'utilisateur scroll */
+    /* Hide toasts on very small screens or while the user scrolls */
     .toast-container.mobile-hidden {
       display: none;
     }
   }
 
-  /* Désactiver complètement sur très petits écrans */
+  /* Disable entirely on very small screens */
   @media (max-width: 480px) {
     .toast-container {
       display: none !important;
@@ -1944,7 +1944,7 @@
 
   /* ===== Responsive ===== */
   @media (max-width: 968px) {
-    /* Optimisation scroll mobile */
+    /* Mobile scroll optimization */
     body {
       scroll-snap-type: y mandatory;
     }
@@ -1979,7 +1979,7 @@
       display: block;
     }
 
-    /* Réduire les animations sur mobile pour les performances */
+    /* Reduce animations on mobile for performance */
     .hero-particles,
     .hero-lines,
     .hero-shapes {
@@ -2000,14 +2000,14 @@
       display: none;
     }
 
-    /* Optimiser les transitions de scroll */
+    /* Optimize scroll transitions */
     section {
       transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
 
   @media (max-width: 640px) {
-    /* Optimisation pour petits écrans */
+    /* Optimization for small screens */
     body {
       scroll-snap-type: y mandatory;
       font-size: 16px; /* Taille de base optimale pour mobile */
@@ -2020,13 +2020,13 @@
       scroll-snap-stop: always;
     }
 
-    /* Améliorer la lisibilité globale */
+    /* Improve global readability */
     p {
       line-height: 1.7;
       margin-bottom: 16px;
     }
 
-    /* Espacements optimisés entre éléments */
+    /* Optimized spacing between elements */
     * + * {
       margin-top: 0;
     }
@@ -2089,7 +2089,7 @@
       font-size: 20px;
     }
 
-    /* Désactiver certaines animations sur très petits écrans */
+    /* Disable some animations on very small screens */
     .hero-particles .particle:nth-child(n+4) {
       display: none;
     }
@@ -2109,7 +2109,7 @@
       display: none;
     }
 
-    /* Sections optimisées */
+    /* Optimized sections */
     .section-header {
       margin-bottom: 48px;
       padding: 0 16px;
@@ -2175,17 +2175,17 @@
       border-radius: 16px;
     }
 
-    /* Optimiser les espacements */
+    /* Optimize spacing */
     .container {
       padding: 0 16px;
     }
 
-    /* Améliorer le scroll entre sections */
+    /* Improve scrolling between sections */
     section {
       scroll-margin-top: 72px; /* Hauteur du header */
     }
 
-    /* Transition fluide entre hero et section suivante */
+    /* Smooth transition between hero and next section */
     .hero + section {
       padding-top: 60px;
       margin-top: -20px; /* Overlap subtil pour transition fluide */
@@ -2209,7 +2209,7 @@
     }
   }
 
-  /* Optimisation pour très petits écrans */
+/* Optimization for very small screens */
   @media (max-width: 375px) {
     .hero {
       padding: 56px 16px 40px;
@@ -2583,6 +2583,395 @@
       height: 200px;
     }
   }
+
+  /* ===== Mockup Section ===== */
+  .mockup-section {
+    --mockup-bg: #020202;
+    --mockup-panel: #080808;
+    --mockup-surface: #0f0f10;
+    --mockup-text: #f7f7f7;
+    --mockup-muted: #8a8a98;
+    --mockup-border: rgba(255, 255, 255, 0.12);
+    background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%), var(--mockup-bg);
+    color: var(--mockup-text);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mockup-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 55%);
+    pointer-events: none;
+  }
+
+  .mockup-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mockup-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .mockup-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 11px;
+    color: var(--mockup-muted);
+    margin-bottom: 12px;
+  }
+
+  .mockup-section h2 {
+    color: var(--mockup-text);
+    font-size: clamp(28px, 5vw, 44px);
+    margin-bottom: 12px;
+  }
+
+  .mockup-lead {
+    max-width: 720px;
+    margin: 0 auto;
+    color: rgba(247,247,247,0.75);
+    line-height: 1.7;
+  }
+
+  .mockup-tabs {
+    background: rgba(255,255,255,0.015);
+    border: 1px solid var(--mockup-border);
+    border-radius: 24px;
+    padding: 32px 24px 40px;
+    backdrop-filter: blur(12px);
+  }
+
+  .mockup-tabs input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mockup-tab-labels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .mockup-tab-labels label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--mockup-border);
+    background: rgba(255,255,255,0.02);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--mockup-muted);
+    text-transform: uppercase;
+  }
+
+  .mockup-tab-labels label:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: var(--mockup-text);
+  }
+
+  #mockup-tab-flyer:checked ~ .mockup-tab-labels label[for="mockup-tab-flyer"],
+  #mockup-tab-table:checked ~ .mockup-tab-labels label[for="mockup-tab-table"],
+  #mockup-tab-wall:checked ~ .mockup-tab-labels label[for="mockup-tab-wall"],
+  #mockup-tab-bus:checked ~ .mockup-tab-labels label[for="mockup-tab-bus"] {
+    background: var(--mockup-text);
+    color: #050505;
+    border-color: transparent;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.45);
+  }
+
+  .mockup-tab-panel {
+    display: none;
+    animation: fadeIn 0.7s ease forwards;
+  }
+
+  #mockup-tab-flyer:checked ~ .mockup-tab-panels #mockup-panel-flyer,
+  #mockup-tab-table:checked ~ .mockup-tab-panels #mockup-panel-table,
+  #mockup-tab-wall:checked ~ .mockup-tab-panels #mockup-panel-wall,
+  #mockup-tab-bus:checked ~ .mockup-tab-panels #mockup-panel-bus {
+    display: block;
+  }
+
+  .mockup-flyer-layout {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .mockup-flyer-card {
+    border: 2px solid #fff;
+    padding: 32px;
+    background: #000;
+    width: min(360px, 100%);
+    aspect-ratio: 148 / 210;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  }
+
+  .mockup-flyer-card h2 {
+    text-align: center;
+    letter-spacing: 0.4em;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  .mockup-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.35);
+    margin: 12px auto;
+    width: 100%;
+  }
+
+  .mockup-warning {
+    font-size: 26px;
+    text-align: center;
+    line-height: 1.3;
+    margin: 18px 0;
+    color: #fff;
+  }
+
+  .mockup-text {
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    color: rgba(247,247,247,0.85);
+  }
+
+  .mockup-cta-box {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+
+  .mockup-qr-box {
+    background: #fff;
+    padding: 14px;
+    margin: 0 auto 12px;
+    width: max-content;
+  }
+
+  .mockup-qr-box img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .mockup-tagline {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .mockup-feature-row {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .mockup-feature {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 11px;
+    color: rgba(247,247,247,0.75);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .mockup-feature svg {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff;
+    stroke-width: 1.3;
+    fill: none;
+  }
+
+  .mockup-spec-card {
+    background: var(--mockup-panel);
+    border: 1px solid var(--mockup-border);
+    border-radius: 16px;
+    padding: 28px;
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .mockup-spec-card h3 {
+    margin-top: 0;
+    letter-spacing: 0.08em;
+    color: var(--mockup-text);
+  }
+
+  .mockup-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .mockup-spec-label {
+    display: block;
+    font-size: 12px;
+    color: var(--mockup-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+
+  .mockup-spec-value {
+    font-size: 14px;
+    color: var(--mockup-text);
+  }
+
+  .mockup-note {
+    margin-top: 20px;
+    padding: 18px;
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 12px;
+    color: var(--mockup-muted);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .mockup-panel-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .mockup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .mockup-card {
+    background: var(--mockup-surface);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mockup-card--alert {
+    background: #ffffff;
+    color: #050505;
+    border-color: rgba(0,0,0,0.15);
+  }
+
+  .mockup-card h3 {
+    margin-top: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .mockup-preview {
+    border: 2px solid #fff;
+    background: #000;
+    min-height: 240px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    gap: 16px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mockup-preview.circle {
+    border-radius: 999px;
+    height: clamp(220px, 55vw, 320px);
+    width: clamp(220px, 55vw, 320px);
+    margin: 0 auto;
+  }
+
+  .mockup-preview.alert {
+    background: #ffffff;
+    color: #050505;
+    border: 2px solid #050505;
+  }
+
+  .mockup-preview.wide {
+    min-height: 180px;
+  }
+
+  .mockup-qr-small img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .mockup-icon {
+    margin: 0 auto 12px;
+  }
+
+  .mockup-icon svg {
+    width: 44px;
+    height: 44px;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    fill: none;
+  }
+
+  .brain-icon svg {
+    stroke-width: 1.2;
+  }
+
+  @media (max-width: 968px) {
+    .mockup-section {
+      padding: 80px 0;
+    }
+
+    .mockup-tab-labels {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mockup-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mockup-flyer-layout {
+      flex-direction: column;
+    }
+
+    .mockup-preview.circle {
+      width: 220px;
+      height: 220px;
+    }
+
+    .mockup-tabs {
+      padding: 24px 16px 32px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -2591,11 +2980,12 @@
   <div class="nav container">
     <div class="brand">Smartbanker</div>
     <nav class="nav-links">
-      <a href="documentation.html" class="nav-link">Documentation</a>
-      <a href="roadmap.html" class="nav-link">Roadmap</a>
+      <a href="exports/documentation.html" class="nav-link">Documentation</a>
+      <a href="exports/roadmap.html" class="nav-link">Roadmap</a>
+      <a href="#mockups" class="nav-link">Mockups</a>
     </nav>
     <nav class="nav-mobile-links">
-      <a href="documentation.html" class="nav-mobile-link" aria-label="Documentation" title="Documentation">
+      <a href="exports/documentation.html" class="nav-mobile-link" aria-label="Documentation" title="Documentation">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -2604,18 +2994,25 @@
           <line x1="8" y1="15" x2="14" y2="15"></line>
         </svg>
       </a>
-      <a href="roadmap.html" class="nav-mobile-link" aria-label="Roadmap" title="Roadmap">
+      <a href="exports/roadmap.html" class="nav-mobile-link" aria-label="Roadmap" title="Roadmap">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+      </a>
+      <a href="#mockups" class="nav-mobile-link" aria-label="Mockups" title="Mockups">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="14" rx="2" ry="2"></rect>
+          <circle cx="9" cy="9" r="2"></circle>
+          <path d="M21 14l-5-4-3 3-4-5-6 6"></path>
         </svg>
       </a>
     </nav>
     <div class="nav-cta">
       <div class="nav-counter">
         <strong id="navCount">3 472</strong>
-        <span>pionniers</span>
+        <span>founders</span>
       </div>
-      <button class="btn" id="navJoinBtn">Rejoindre Smartbanker</button>
+      <button class="btn" id="navJoinBtn">Join Smartbanker</button>
     </div>
   </div>
 </header>
@@ -2623,13 +3020,13 @@
 <main>
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Grille perspective animée -->
+    <!-- Animated perspective grid -->
     <div class="hero-grid"></div>
     
-    <!-- Ligne de scan animée -->
+    <!-- Animated scan line -->
     <div class="hero-scan"></div>
     
-    <!-- Réseau de particules connectées - Effet neuronal -->
+    <!-- Connected particles network -->
     <div class="hero-particles">
       <div class="particle"></div>
       <div class="particle"></div>
@@ -2643,14 +3040,14 @@
       <div class="particle"></div>
     </div>
     
-    <!-- Lignes courbes morphing - Effet hypnotique -->
+    <!-- Morphing curved lines -->
     <div class="hero-lines">
       <div class="hero-line"></div>
       <div class="hero-line"></div>
       <div class="hero-line"></div>
     </div>
     
-    <!-- Formes géométriques morphing - Effet organique -->
+    <!-- Morphing geometric shapes -->
     <div class="hero-shapes">
       <div class="hero-shape"></div>
       <div class="hero-shape"></div>
@@ -2658,7 +3055,7 @@
       <div class="hero-shape"></div>
     </div>
     
-    <!-- Formes géométriques flottantes (legacy) -->
+    <!-- Legacy floating geometric shapes -->
     <div class="geometric-bg">
       <div class="geometric-shape"></div>
       <div class="geometric-shape"></div>
@@ -2666,21 +3063,21 @@
     </div>
     
     <div class="hero-content container">
-      <div class="eyebrow hero-eyebrow">Réseau Web3 · Accès fondateur</div>
-      <h1>Deviens acteur de la révolution.<br>Ou regarde-la te dépasser.</h1>
-      <p class="hero-lead">Smartbanker redonne le pouvoir aux experts du secteur financier. Rejoins les pionniers qui réécrivent les règles.</p>
+      <div class="eyebrow hero-eyebrow">Web3 Network · Founders Access</div>
+      <h1>Lead the revolution.<br>Or watch it outrun you.</h1>
+      <p class="hero-lead">Smartbanker gives finance experts back their power. Join the pioneers rewriting the rules.</p>
       
       <div class="hero-ctas">
-        <button class="btn btn-pulse" id="heroJoinBtn">Rejoindre Smartbanker</button>
-        <button class="btn-ghost" id="heroPriorityBtn">Demander un accès prioritaire</button>
+        <button class="btn btn-pulse" id="heroJoinBtn">Join Smartbanker</button>
+        <button class="btn-ghost" id="heroPriorityBtn">Request priority access</button>
       </div>
 
       <div class="hero-stats">
         <div class="stat-item">
           <span class="stat-number" id="membersCount">3 472</span>
-          <span>fondateurs RH & investisseurs visionnaires</span>
+          <span>HR founders & visionary investors</span>
         </div>
-        <div class="fomo-badge" id="newToday">+28 nouveaux aujourd'hui</div>
+        <div class="fomo-badge" id="newToday">+28 new today</div>
       </div>
     </div>
   </section>
@@ -2689,15 +3086,15 @@
   <section id="why-join" class="fade-in">
     <div class="container">
       <div class="section-header">
-        <h2>Pourquoi rejoindre ?</h2>
-        <p>Les Promesses Fondatrices</p>
+        <h2>Why should you join?</h2>
+        <p>What founders get</p>
       </div>
 
       <div class="why-grid">
         <div class="why-features">
           <div class="feature-card fade-in">
-            <h3>Accès bêta exclusif et rôle de co-créateur</h3>
-            <p>Influence la roadmap, co-construis les protocoles et obtiens des récompenses early. Tu ne consommes pas — tu crées.</p>
+            <h3>Exclusive beta access & co-creator role</h3>
+            <p>Shape the roadmap, co-build the protocols, unlock early rewards. You’re not a consumer here — you create.</p>
             <div class="network-illustration" style="margin-top: 24px;">
               <div class="network-node" style="top: 20%; left: 15%;"></div>
               <div class="network-node" style="top: 40%; left: 35%;"></div>
@@ -2711,8 +3108,8 @@
           </div>
 
           <div class="feature-card fade-in">
-            <h3>Récompenses early</h3>
-            <p>Jetons, badges, influence sur la roadmap. Plus tu es actif, plus tu avances. La progression est visible, mesurable, récompensée.</p>
+            <h3>Early rewards</h3>
+            <p>Tokens, badges, roadmap influence. The more active you are, the faster you move. Progress is visible, measurable, rewarded.</p>
             <div class="illustration-container" style="margin-top: 24px; min-height: 200px;">
               <div class="token-illustration">
                 <div class="token-circle"></div>
@@ -2724,8 +3121,8 @@
           </div>
 
           <div class="feature-card fade-in">
-            <h3>Accès à des services inédits</h3>
-            <p>Recrutement tokenisé, trading RH, gouvernance décentralisée. Des outils que seuls les fondateurs peuvent utiliser en premier.</p>
+            <h3>Access to services before anyone else</h3>
+            <p>Tokenized recruiting, people-trading desks, decentralized governance. Tools only founders can touch first.</p>
             <div class="chart-illustration" style="margin-top: 24px;">
               <div class="chart-bar"></div>
               <div class="chart-bar"></div>
@@ -2737,13 +3134,13 @@
           </div>
 
           <div style="margin-top: 16px;">
-            <button class="btn" id="whyJoinBtn">Passer du côté fondateur</button>
+            <button class="btn" id="whyJoinBtn">Step onto the founders’ side</button>
           </div>
         </div>
 
         <div class="gamebox fade-in">
           <div class="progress-header">
-            <h4>Progression</h4>
+            <h4>Progress</h4>
             <span class="rank-badge" id="rankLabel">Novice</span>
           </div>
 
@@ -2752,24 +3149,24 @@
               <div class="progress-bar" id="progressBar" style="width: 20%"></div>
             </div>
             <div class="progress-text">
-              <span>Votre rang</span>
+              <span>Your rank</span>
               <span id="progressPercent">20%</span>
             </div>
           </div>
 
           <div style="margin: 24px 0; padding: 20px; background: rgba(10,10,10,0.02); border-radius: 12px;">
-            <div style="font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--fg);">Plus tu es actif, plus tu avances.</div>
-            <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">Chaque interaction débloque des niveaux. Chaque niveau ouvre des accès. Chaque accès multiplie ton influence.</div>
+            <div style="font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--fg);">The more active you are, the faster you move.</div>
+            <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">Every interaction unlocks a new level. Each level opens additional access. Every access multiplies your influence.</div>
           </div>
 
           <div class="quiz-container">
-            <div class="quiz-title">Mini-quizz : Quel type de fondateur êtes-vous ?</div>
+            <div class="quiz-title">Mini quiz: What kind of founder are you?</div>
             <div class="quiz-options">
-              <button class="quiz-btn" data-answer="builder">Je préfère construire des outils</button>
-              <button class="quiz-btn" data-answer="networker">Je crée des ponts & partenariats</button>
-              <button class="quiz-btn" data-answer="trader">Je monétise les opportunités</button>
+              <button class="quiz-btn" data-answer="builder">I prefer building tools</button>
+              <button class="quiz-btn" data-answer="networker">I create partnerships & bridges</button>
+              <button class="quiz-btn" data-answer="trader">I monetize every opportunity</button>
             </div>
-            <div class="quiz-hint">Réponds pour débloquer ton badge et avancer dans la file.</div>
+            <div class="quiz-hint">Answer to unlock your badge and jump the queue.</div>
           </div>
         </div>
       </div>
@@ -2784,7 +3181,7 @@
     </div>
     <div class="container">
       <div class="section-header">
-        <h2>Ils sont déjà là. Et toi ?</h2>
+        <h2>They’re already in. What about you?</h2>
       </div>
 
       <div class="partners">
@@ -2797,25 +3194,420 @@
 
       <div class="testimonials-grid">
         <div class="testimonial-card fade-in">
-          <div class="testimonial-text">"Ce projet va changer le recrutement européen."</div>
+          <div class="testimonial-text">“This project is about to flip European recruiting.”</div>
           <div class="testimonial-author">— Anna, Head of Talent, Zurich</div>
         </div>
         <div class="testimonial-card fade-in">
-          <div class="testimonial-text">"Une nouvelle façon de valoriser les talents. La tokenisation ouvre des perspectives inédites."</div>
+          <div class="testimonial-text">“A new way to value talent. Tokenization opens unheard-of angles.”</div>
           <div class="testimonial-author">— Marc, Investor, Paris</div>
         </div>
         <div class="testimonial-card fade-in">
-          <div class="testimonial-text">"Tokenisation + gouvernance = disruption. Smartbanker est l'avenir."</div>
+          <div class="testimonial-text">“Tokenization + governance = disruption. Smartbanker is the future.”</div>
           <div class="testimonial-author">— Leila, HR Tech Founder</div>
         </div>
       </div>
 
       <div style="text-align: center; margin-top: 48px;">
         <div style="font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--fg);">
-          <span id="tokensDistributed">152 890</span> jetons distribués
+          <span id="tokensDistributed">152 890</span> tokens distributed
         </div>
-        <div style="font-size: 13px; color: var(--muted);">Et ce n'est que le début.</div>
+        <div style="font-size: 13px; color: var(--muted);">And that’s just the opening move.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- Mockups Section -->
+  <section id="mockups" class="mockup-section fade-in">
+    <div class="container">
+      <div class="mockup-header">
+        <p class="mockup-eyebrow">SmartBankers · Hong Kong</p>
+        <h2>Physical mockups & field assets</h2>
+        <p class="mockup-lead">
+          Flyers, stickers, and bus shelters ready to print for Central, Admiralty, and Kowloon Bay.
+          Browse every variant, QR placement, and print spec to activate the field in under 24 hours.
+        </p>
+      </div>
+
+      <section class="mockup-tabs" aria-label="SmartBankers physical mockups">
+        <input type="radio" name="mockup-tab" id="mockup-tab-flyer" checked>
+        <input type="radio" name="mockup-tab" id="mockup-tab-table">
+        <input type="radio" name="mockup-tab" id="mockup-tab-wall">
+        <input type="radio" name="mockup-tab" id="mockup-tab-bus">
+
+        <div class="mockup-tab-labels">
+          <label for="mockup-tab-flyer">Flyer</label>
+          <label for="mockup-tab-table">Table stickers</label>
+          <label for="mockup-tab-wall">Wall stickers</label>
+          <label for="mockup-tab-bus">Bus shelters</label>
+        </div>
+
+        <div class="mockup-tab-panels">
+          <section id="mockup-panel-flyer" class="mockup-tab-panel" aria-labelledby="mockup-tab-flyer">
+            <div class="mockup-flyer-layout">
+              <article class="mockup-flyer-card">
+                <div>
+                  <h2>SMARTBANKERS</h2>
+                  <div class="mockup-divider"></div>
+                </div>
+                <p class="mockup-warning">&#x26A0;&#xFE0E; YOUR AI REPLACEMENT IS ALREADY TRAINED</p>
+                <p class="mockup-text">
+                  Banking professionals in Hong Kong are being replaced by the AI they trained with their own data.
+                  Bank of China. CCB. ICBC. ABC. It is happening now.
+                </p>
+                <div class="mockup-cta-box">
+                  TAKE BACK CONTROL OF YOUR DATA.<br>JOIN THE MOVEMENT.
+                </div>
+                <div class="mockup-qr-box">
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code vers smartbankers.hk">
+                </div>
+                <p class="mockup-tagline">SCAN TO JOIN SMARTBANKERS</p>
+                <div class="mockup-feature-row">
+                  <div class="mockup-feature">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                      <path d="M3 12A9 3 0 0 0 21 12"></path>
+                    </svg>
+                    <span>Data<br>Control</span>
+                  </div>
+                  <div class="mockup-feature">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                    </svg>
+                    <span>NFT<br>Identity</span>
+                  </div>
+                  <div class="mockup-feature">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                    </svg>
+                    <span>No<br>Censorship</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="mockup-spec-card">
+                <h3>Print specs — Flyer</h3>
+                <div class="mockup-spec-grid">
+                  <div>
+                    <span class="mockup-spec-label">Format</span>
+                    <span class="mockup-spec-value">148mm × 210mm</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Resolution</span>
+                    <span class="mockup-spec-value">300 DPI</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Palette</span>
+                    <span class="mockup-spec-value">Black & White only</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Paper</span>
+                    <span class="mockup-spec-value">Premium matte stock</span>
+                  </div>
+                </div>
+                <div class="mockup-note">
+                  Distribution: Central, Admiralty, Causeway Bay. The CTA block uses an inverted outline to mimic metallic ink without special finishes.
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="mockup-panel-table" class="mockup-tab-panel" aria-labelledby="mockup-tab-table">
+            <div class="mockup-panel-stack">
+              <div class="mockup-grid">
+                <article class="mockup-card">
+                  <h3>Square — 100mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <div class="mockup-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                          <path d="M12 9v4"></path>
+                          <path d="M12 17h.01"></path>
+                        </svg>
+                      </div>
+                      <p class="mockup-tagline">ARE YOU NEXT?</p>
+                      <div class="mockup-qr-box mockup-qr-small">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                      <p>SMARTBANKERS<br><span class="mockup-spec-label">Take Back Control</span></p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Circle — Ø 100mm</h3>
+                  <div class="mockup-preview circle">
+                    <div>
+                      <div class="mockup-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="6"></circle>
+                          <path d="M12 6V2M12 22v-4M6 12H2M22 12h-4M5 5l2.5 2.5M16.5 16.5 19 19M5 19l2.5-2.5M16.5 7.5 19 5"></path>
+                        </svg>
+                      </div>
+                      <p class="mockup-tagline">AI TOOK YOUR JOB</p>
+                      <div class="mockup-qr-box mockup-qr-small">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                      <p class="mockup-tagline">JOIN THE MOVEMENT</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Rectangle — 150 × 80mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <div class="mockup-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+                          <path d="M8 8V5a4 4 0 0 1 8 0v3"></path>
+                          <path d="M7 13h10"></path>
+                        </svg>
+                      </div>
+                      <p>YOU TRAINED THE AI<br>NOW IT REPLACES YOU</p>
+                      <div class="mockup-divider"></div>
+                      <p class="mockup-spec-label">SmartBankers Community</p>
+                    </div>
+                    <div class="mockup-qr-box mockup-qr-small">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Mini square — 70mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <div class="mockup-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                          <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                          <path d="M3 12A9 3 0 0 0 21 12"></path>
+                        </svg>
+                      </div>
+                      <div class="mockup-qr-box mockup-qr-small">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                      <p class="mockup-tagline">SMARTBANKERS</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <article class="mockup-spec-card">
+                <h3>Sticker specs</h3>
+                <div class="mockup-spec-grid">
+                  <div>
+                    <span class="mockup-spec-label">Material</span>
+                    <span class="mockup-spec-value">Premium vinyl</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Finish</span>
+                    <span class="mockup-spec-value">Matte black anti-glare</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Waterproof</span>
+                    <span class="mockup-spec-value">Yes</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Adhesive</span>
+                    <span class="mockup-spec-value">Removable</span>
+                  </div>
+                </div>
+                <div class="mockup-note">
+                  Placement: coffee shops, co-working hubs, bank cafeterias (Central / Admiralty / Causeway Bay). Matte finish prevents glare during QR scans.
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="mockup-panel-wall" class="mockup-tab-panel" aria-labelledby="mockup-tab-wall">
+            <div class="mockup-panel-stack">
+              <div class="mockup-grid">
+                <article class="mockup-card">
+                  <h3>Wall sticker — 600 × 400mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <p class="mockup-warning" style="font-size:20px;">YOUR DATA<br>THEIR PROFIT<br>YOUR JOB LOSS</p>
+                      <p class="mockup-spec-label">Bank of China • CCB • ICBC • ABC</p>
+                    </div>
+                    <div class="mockup-qr-box mockup-qr-small">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Vertical — 400 × 600mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <div class="mockup-icon brain-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 18V5"></path>
+                          <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path>
+                          <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"></path>
+                          <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"></path>
+                          <path d="M18 18a4 4 0 0 0 2-7.464"></path>
+                          <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"></path>
+                          <path d="M6 18a4 4 0 0 1-2-7.464"></path>
+                          <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"></path>
+                        </svg>
+                      </div>
+                      <p class="mockup-tagline">STEP 1 • YOU TRAIN THE AI</p>
+                      <p class="mockup-tagline">STEP 2 • AI TAKES YOUR ROLE</p>
+                      <div class="mockup-divider"></div>
+                      <p class="mockup-tagline">YOUR MOVE • JOIN SMARTBANKERS</p>
+                      <div class="mockup-qr-box mockup-qr-small" style="margin-top:18px;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card mockup-card--alert">
+                  <h3>Warning panel — 300 × 300mm</h3>
+                  <div class="mockup-preview alert">
+                    <div>
+                      <div class="mockup-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                          <path d="M12 9v4"></path>
+                          <path d="M12 17h.01"></path>
+                        </svg>
+                      </div>
+                      <p class="mockup-warning" style="color:#050505; font-size:18px;">ATTENTION — AI ALERT ZONE</p>
+                      <p class="mockup-spec-label" style="color:#050505;">Place near elevator doors & badge scanners</p>
+                      <div class="mockup-qr-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Wide banner — 800 × 200mm</h3>
+                  <div class="mockup-preview wide">
+                    <p>AI DOESN'T SLEEP. AI DOESN'T TAKE BREAKS. AI TOOK YOUR JOB.</p>
+                    <p class="mockup-spec-label">Tokenize your data • Control your future • Uncensored community</p>
+                    <div class="mockup-qr-box mockup-qr-small">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Square statement — 500mm</h3>
+                  <div class="mockup-preview">
+                    <p class="mockup-warning" style="font-size:22px;">THE AI YOU BUILT<br>REPLACED YOU</p>
+                    <p class="mockup-spec-label">Hong Kong banking professionals</p>
+                    <div class="mockup-qr-box">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                    <p class="mockup-tagline">SMARTBANKERS</p>
+                  </div>
+                </article>
+              </div>
+
+              <article class="mockup-spec-card">
+                <h3>Wall sticker specs</h3>
+                <div class="mockup-spec-grid">
+                  <div>
+                    <span class="mockup-spec-label">Material</span>
+                    <span class="mockup-spec-value">Premium vinyl</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Finish</span>
+                    <span class="mockup-spec-value">Matte</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Application</span>
+                    <span class="mockup-spec-value">Dry / Wet</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Removal</span>
+                    <span class="mockup-spec-value">Clean peel</span>
+                  </div>
+                </div>
+                <div class="mockup-note">
+                  Placement: IFC, Cheung Kong Center, MTR Hong Kong Station escalators, co-working spaces near Bank of China Tower.
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="mockup-panel-bus" class="mockup-tab-panel" aria-labelledby="mockup-tab-bus">
+            <div class="mockup-panel-stack">
+              <div class="mockup-grid">
+                <article class="mockup-card">
+                  <h3>Portrait — 1200 × 1800mm</h3>
+                  <div class="mockup-preview">
+                    <p class="mockup-warning" style="font-size:24px;">YOU TRAINED THE AI THAT FIRED YOU</p>
+                    <p class="mockup-text" style="font-size:12px;">
+                      Professionals at Bank of China, CCB, ICBC, and ABC are being replaced by AI systems trained with their own expertise.
+                    </p>
+                    <div class="mockup-qr-box">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                    <p class="mockup-tagline">SCAN TO JOIN THE MOVEMENT</p>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Landscape — 1800 × 1200mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <p class="mockup-warning" style="font-size:20px;">YOUR JOB • YOUR DATA • THEIR AI • YOUR LOSS</p>
+                      <p class="mockup-spec-label">No censorship • Tokenize data • NFT identities • Rewards</p>
+                    </div>
+                    <div class="mockup-qr-box">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Urban panels — 800 × 1200mm</h3>
+                  <div class="mockup-preview">
+                    <div class="mockup-placeholder">
+                      <p class="mockup-spec-label">Concept currently iterating</p>
+                      <p class="mockup-text">Final artboard shipping soon.</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <article class="mockup-spec-card">
+                <h3>Bus shelter specs</h3>
+                <div class="mockup-spec-grid">
+                  <div>
+                    <span class="mockup-spec-label">Format</span>
+                    <span class="mockup-spec-value">1200 × 1800mm & 1800 × 1200mm</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Substrate</span>
+                    <span class="mockup-spec-value">Backlit PET</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Finish</span>
+                    <span class="mockup-spec-value">Matte anti-glare</span>
+                  </div>
+                  <div>
+                    <span class="mockup-spec-label">Zones</span>
+                    <span class="mockup-spec-value">Central, Wan Chai, Kowloon Bay</span>
+                  </div>
+                </div>
+                <div class="mockup-note">
+                  Use dynamic QR codes to route per campaign (Waitlist, Invest, Job Board) without reprinting.
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
     </div>
   </section>
 
@@ -2828,8 +3620,8 @@
           <div class="geometric-shape" style="width: 80px; height: 80px; bottom: 15%; right: 8%;"></div>
         </div>
         <div class="rarity-header">
-          <h3>Moins de 300 accès fondateurs restants.</h3>
-          <p>Nous ouvrons par vagues. Les places fondatrices donnent droit à jetons, badges & influence. Moins il en reste, plus ton pouvoir augmente.</p>
+          <h3>Fewer than 300 founder passes left.</h3>
+          <p>Access opens in waves. Founder passes grant tokens, badges, and influence. The scarcer they get, the more powerful you become.</p>
         </div>
 
         <div class="rarity-bar-container">
@@ -2837,15 +3629,15 @@
             <div class="rarity-bar" id="rarityBar" style="width: 65%"></div>
           </div>
           <div class="rarity-info">
-            <span>Accès prioritaire bientôt fermé</span>
-            <span class="rarity-count" id="placesLeft">~ 278 places</span>
+            <span>Priority access closing soon</span>
+            <span class="rarity-count" id="placesLeft">~ 278 spots</span>
           </div>
         </div>
 
-        <div class="rarity-warning">L'accès peut fermer à tout moment selon l'usage du token. Reste connecté.</div>
+        <div class="rarity-warning">Access can close at any moment depending on token usage. Stay ready.</div>
 
         <div style="margin-top: 32px;">
-          <button class="btn btn-pulse" id="rarityJoinBtn">Rejoindre avant fermeture</button>
+          <button class="btn btn-pulse" id="rarityJoinBtn">Join before doors close</button>
         </div>
       </div>
     </div>
@@ -2854,11 +3646,11 @@
   <!-- Micro Engagement Section -->
   <section class="engagement-section fade-in">
     <div class="container">
-      <h3>Micro-engage : une question</h3>
-      <p>Et toi, où seras-tu quand les banques ne recruteront plus — mais tokeniseront ?</p>
+      <h3>Micro-engage: one question</h3>
+      <p>Where will you stand when banks stop recruiting and start tokenizing?</p>
       <div class="engagement-btns">
-        <button class="btn" id="engagementYesBtn">Oui — je rejoins</button>
-        <button class="btn-ghost" id="engagementLaterBtn">Me rappeler</button>
+        <button class="btn" id="engagementYesBtn">Yes — I’m in</button>
+        <button class="btn-ghost" id="engagementLaterBtn">Remind me</button>
       </div>
     </div>
   </section>
@@ -2866,17 +3658,17 @@
 
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <button class="btn btn-pulse" id="stickyJoinBtn">Rejoindre Smartbanker</button>
+  <button class="btn btn-pulse" id="stickyJoinBtn">Join Smartbanker</button>
 </div>
 
 <footer>
   <div class="footer-content">
     <div class="footer-text">
-      Smartbanker — Réseau privé pour professionnels RH & finance. Confidentialité et gouvernance intégrées.
+      Smartbanker — Private network for HR and finance leaders. Confidentiality and governance built in.
     </div>
     <div class="copyright">
-      © 2025 Smartbanker – Toute reproduction ou exclusion du réseau exposera à la fracture digitale. Rejoins ou reste hors-jeu.
-      <div class="copyright-warning">L'accès peut fermer à tout moment selon l'usage du token. Reste connecté.</div>
+      © 2025 Smartbanker – Copying or staying outside the network means digital fracture. Join or stay sidelined.
+      <div class="copyright-warning">Access can close anytime, depending on token usage. Stay connected.</div>
     </div>
   </div>
 </footer>
@@ -2886,35 +3678,35 @@
   <div class="modal-container">
     <button class="modal-close" id="modalClose">×</button>
     <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle">Réserver votre place fondatrice</h2>
-      <p class="modal-subtitle" id="modalSubtitle">Rejoins les pionniers qui réécrivent les règles.</p>
+      <h2 class="modal-title" id="modalTitle">Reserve your founder pass</h2>
+      <p class="modal-subtitle" id="modalSubtitle">Join the pioneers rewriting the rules.</p>
     </div>
     <form class="modal-form" id="modalForm">
       <div class="modal-input-group">
-        <label class="modal-label" for="modalEmail">E-mail *</label>
+        <label class="modal-label" for="modalEmail">Email *</label>
         <input 
           type="email" 
           id="modalEmail" 
           class="modal-input" 
-          placeholder="ton@email.com" 
+          placeholder="you@email.com" 
           required
           autocomplete="email"
         />
         <div class="modal-error" id="modalError"></div>
       </div>
       <div class="modal-input-group" id="modalCompanyGroup" style="display: none;">
-        <label class="modal-label" for="modalCompany">Nom de votre entreprise (optionnel)</label>
+        <label class="modal-label" for="modalCompany">Company name (optional)</label>
         <input 
           type="text" 
           id="modalCompany" 
           class="modal-input" 
-          placeholder="Votre entreprise"
+          placeholder="Your company"
           autocomplete="organization"
         />
       </div>
       <div class="modal-actions">
-        <button type="submit" class="modal-btn modal-btn-primary" id="modalSubmit">Confirmer</button>
-        <button type="button" class="modal-btn modal-btn-secondary" id="modalCancel">Annuler</button>
+        <button type="submit" class="modal-btn modal-btn-primary" id="modalSubmit">Confirm</button>
+        <button type="button" class="modal-btn modal-btn-secondary" id="modalCancel">Cancel</button>
       </div>
     </form>
   </div>
@@ -2955,9 +3747,9 @@
     const timer = setInterval(() => {
       step++;
       current += increment;
-      el.textContent = Math.round(current).toLocaleString('fr-FR');
+      el.textContent = Math.round(current).toLocaleString('en-US');
       if (step >= steps) {
-        el.textContent = end.toLocaleString('fr-FR');
+        el.textContent = end.toLocaleString('en-US');
         clearInterval(timer);
       }
     }, stepDuration);
@@ -2973,7 +3765,7 @@
   // Update new today badge
   function updateNewToday() {
     newToday = 10 + Math.floor(Math.random() * 60);
-    newTodayEl.textContent = `+${newToday} nouveaux aujourd'hui`;
+    newTodayEl.textContent = `+${newToday} new today`;
   }
   setInterval(updateNewToday, 7000);
 
@@ -2987,9 +3779,9 @@
     if (progress < 20) {
       rankLabelEl.textContent = 'Novice';
     } else if (progress < 45) {
-      rankLabelEl.textContent = 'Explorateur';
+      rankLabelEl.textContent = 'Explorer';
     } else if (progress < 75) {
-      rankLabelEl.textContent = 'Acteur';
+      rankLabelEl.textContent = 'Operator';
     } else {
       rankLabelEl.textContent = 'Leader';
     }
@@ -3008,7 +3800,7 @@
       updateProgress(bonus);
 
       // Show toast
-      showToast('Badge débloqué • +' + bonus + '%');
+      showToast('Badge unlocked • +' + bonus + '%');
     });
   });
 
@@ -3017,7 +3809,7 @@
     places = Math.max(8, places - Math.floor(Math.random() * 6));
     const percentage = Math.max(6, Math.round((places / 400) * 100));
     rarityBarEl.style.width = percentage + '%';
-    placesLeftEl.textContent = `~ ${places} places`;
+    placesLeftEl.textContent = `~ ${places} spots`;
   }
   setInterval(updateRarity, 8000);
 
@@ -3026,18 +3818,18 @@
     constructor() {
       this.container = null;
       this.toasts = [];
-      this.maxToasts = 3; // Maximum de toasts affichés simultanément
+      this.maxToasts = 3; // Maximum notifications shown simultaneously
       this.isMobile = window.innerWidth <= 640;
       this.isSmallMobile = window.innerWidth <= 480;
       this.scrollY = 0;
       this.init();
       
-      // Désactiver complètement sur très petits écrans
+      // Disable completely on very small screens
       if (this.isSmallMobile) {
         return;
       }
       
-      // Attendre que le DOM soit complètement chargé
+      // Wait for DOM readiness
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           this.scheduleNotifications();
@@ -3052,7 +3844,7 @@
     setupMobileOptimizations() {
       if (!this.isMobile) return;
 
-      // Masquer les toasts pendant le scroll sur mobile
+      // Hide toasts while scrolling on mobile
       let scrollTimeout;
       window.addEventListener('scroll', () => {
         if (this.container) {
@@ -3076,15 +3868,15 @@
     }
 
     show(message, duration = 4000) {
-      // Ne pas afficher sur très petits écrans
+      // Do not show on very small screens
       if (this.isSmallMobile) {
         return;
       }
 
-      // Durée réduite sur mobile
+      // Shorter duration on mobile
       const displayDuration = this.isMobile ? 2500 : duration;
       
-      // Limiter le nombre de toasts simultanés (moins sur mobile)
+      // Limit number of simultaneous toasts (less on mobile)
       const maxToasts = this.isMobile ? 1 : this.maxToasts;
       if (this.toasts.length >= maxToasts) {
         // Supprimer le plus ancien
@@ -3140,13 +3932,13 @@
     }
 
     scheduleNotifications() {
-      // Sur mobile, réduire drastiquement la fréquence
+      // Mobile: drastically reduce frequency
       if (this.isMobile) {
-        // Messages programmés avec délais beaucoup plus longs sur mobile
+        // Longer delays on mobile
         const initialMessages = [
-          { text: "Marie de Paris vient de rejoindre", delay: 8000 },
-          { text: "3 nouvelles inscriptions", delay: 20000 },
-          { text: "127 personnes consultent cette page", delay: 35000 }
+          { text: "Marie from Paris just joined", delay: 8000 },
+          { text: "3 new registrations", delay: 20000 },
+          { text: "127 people are viewing this page", delay: 35000 }
         ];
 
         initialMessages.forEach(msg => {
@@ -3155,13 +3947,13 @@
           }, msg.delay);
         });
 
-        // Répéter les notifications toutes les 60 secondes sur mobile (au lieu de 25)
+        // Repeat every 60 seconds on mobile
         setInterval(() => {
           const randomMessages = [
-            "Marie de Paris vient de rejoindre",
-            "Thomas de Lyon vient de s'inscrire",
-            "3 nouvelles inscriptions",
-            "5 inscriptions aujourd'hui"
+            "Marie from Paris just joined",
+            "Thomas from Lyon signed up",
+            "3 new registrations",
+            "5 signups today"
           ];
           
           const randomDelay = Math.random() * 3000; // 0-3 secondes
@@ -3172,13 +3964,13 @@
           }, randomDelay);
         }, 60000); // 60 secondes au lieu de 25
       } else {
-        // Comportement normal sur desktop
+        // Desktop cadence
         const initialMessages = [
-          { text: "Marie de Paris vient de rejoindre le mouvement", delay: 3000 },
-          { text: "3 personnes se sont inscrites dans la dernière heure", delay: 8000 },
-          { text: "127 personnes consultent cette page en ce moment", delay: 12000 },
-          { text: "Thomas de Lyon vient de s'inscrire", delay: 15000 },
-          { text: "5 nouvelles inscriptions aujourd'hui", delay: 20000 }
+          { text: "Marie from Paris just joined the movement", delay: 3000 },
+          { text: "3 people signed up in the last hour", delay: 8000 },
+          { text: "127 people are viewing this page right now", delay: 12000 },
+          { text: "Thomas from Lyon just joined", delay: 15000 },
+          { text: "5 new signups today", delay: 20000 }
         ];
 
         initialMessages.forEach(msg => {
@@ -3187,20 +3979,20 @@
           }, msg.delay);
         });
 
-        // Répéter les notifications toutes les 25 secondes avec variations
+        // Repeat every 25 seconds with variations
         setInterval(() => {
           const randomMessages = [
-            "Marie de Paris vient de rejoindre le mouvement",
-            "Thomas de Lyon vient de s'inscrire",
-            "Sophie de Genève vient de rejoindre le mouvement",
-            "Marc de Zurich vient de s'inscrire",
-            "Lucas de Bruxelles vient de rejoindre",
-            "Emma de Genève vient de s'inscrire",
-            "3 personnes se sont inscrites dans la dernière heure",
-            "5 nouvelles inscriptions aujourd'hui",
-            "127 personnes consultent cette page en ce moment",
-            "Un investisseur de Londres vient de rejoindre",
-            "Un fondateur RH de Bâle vient de s'inscrire"
+            "Marie from Paris just joined the movement",
+            "Thomas from Lyon just signed up",
+            "Sophie from Geneva just joined",
+            "Marc from Zurich just joined",
+            "Lucas from Brussels is now in",
+            "Emma from Geneva just signed up",
+            "3 people signed up in the last hour",
+            "5 new signups today",
+            "127 people are viewing this page right now",
+            "An investor from London just joined",
+            "An HR founder from Basel just signed up"
           ];
           
           const randomDelay = Math.random() * 5000; // 0-5 secondes
@@ -3217,7 +4009,7 @@
   // Initialize toast notification system
   let toastNotification;
   
-  // S'assurer que l'initialisation se fait au bon moment
+  // Make sure initialization happens at the right moment
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       toastNotification = new ToastNotification();
@@ -3255,33 +4047,33 @@
       modalError.textContent = '';
     }
 
-    // Configurer la modal selon le type
+    // Configure modal content
     if (type === 'join') {
-      if (modalTitle) modalTitle.textContent = 'Réserver votre place fondatrice';
-      if (modalSubtitle) modalSubtitle.textContent = 'Rejoins les pionniers qui réécrivent les règles.';
+      if (modalTitle) modalTitle.textContent = 'Reserve your founder pass';
+      if (modalSubtitle) modalSubtitle.textContent = 'Join the pioneers rewriting the rules.';
       if (modalCompanyGroup) modalCompanyGroup.style.display = 'none';
-      if (modalSubmit) modalSubmit.textContent = 'Confirmer';
+      if (modalSubmit) modalSubmit.textContent = 'Confirm';
     } else if (type === 'priority') {
-      if (modalTitle) modalTitle.textContent = 'Demander un accès prioritaire';
-      if (modalSubtitle) modalSubtitle.textContent = 'Accès exclusif pour les entreprises et investisseurs.';
+      if (modalTitle) modalTitle.textContent = 'Request priority access';
+      if (modalSubtitle) modalSubtitle.textContent = 'Exclusive access for companies and investors.';
       if (modalCompanyGroup) modalCompanyGroup.style.display = 'block';
-      if (modalSubmit) modalSubmit.textContent = 'Envoyer la demande';
+      if (modalSubmit) modalSubmit.textContent = 'Send request';
     } else if (type === 'reminder') {
-      if (modalTitle) modalTitle.textContent = 'Recevoir un rappel';
-      if (modalSubtitle) modalSubtitle.textContent = 'Nous t\'enverrons un e-mail si une place prioritaire s\'ouvre.';
+      if (modalTitle) modalTitle.textContent = 'Set a reminder';
+      if (modalSubtitle) modalSubtitle.textContent = 'We’ll email you if a priority slot opens.';
       if (modalCompanyGroup) modalCompanyGroup.style.display = 'none';
-      if (modalSubmit) modalSubmit.textContent = 'Programmer le rappel';
+      if (modalSubmit) modalSubmit.textContent = 'Schedule reminder';
     }
 
-    // Forcer l'affichage de la modal
+    // Show modal
     modalOverlay.style.display = 'flex';
     modalOverlay.style.visibility = 'visible';
     modalOverlay.classList.add('show');
     
-    // Forcer le rendu
+    // Force render
     void modalOverlay.offsetHeight;
     
-    // Focus sur l'input email après l'animation
+    // Focus email after animation
     setTimeout(() => {
       if (modalEmail) {
         modalEmail.focus();
@@ -3337,9 +4129,9 @@
       return;
     }
     
-    // Modal initialisée avec succès
+    // Modal initialized successfully
 
-    // Fermer la modal
+    // Close modal
     if (modalClose) modalClose.addEventListener('click', closeModal);
     if (modalCancel) modalCancel.addEventListener('click', closeModal);
     if (modalOverlay) {
@@ -3350,14 +4142,14 @@
       });
     }
 
-    // Fermer avec Escape
+    // Close with Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('show')) {
         closeModal();
       }
     });
 
-    // Soumettre le formulaire
+    // Submit the form
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (!modalEmail) return;
@@ -3367,18 +4159,18 @@
 
     // Validation
     if (!email) {
-      showModalError('Veuillez entrer votre e-mail.');
+      showModalError('Please enter your email.');
       return;
     }
 
     if (!validateEmail(email)) {
-      showModalError('Veuillez entrer une adresse e-mail valide.');
+      showModalError('Please enter a valid email address.');
       return;
     }
 
-    // Traiter selon le type
+    // Handle by type
     if (currentModalType === 'join') {
-      // Enregistrer l'email dans localStorage
+      // Save email in localStorage
       try {
         const savedEmails = JSON.parse(localStorage.getItem('smartbanker_emails') || '[]');
         if (!savedEmails.includes(email)) {
@@ -3386,9 +4178,9 @@
           localStorage.setItem('smartbanker_emails', JSON.stringify(savedEmails));
         }
         localStorage.setItem('smartbanker_last_email', email);
-        console.log('Email enregistré:', email);
+        console.log('Email saved:', email);
       } catch (e) {
-        console.error('Erreur lors de l\'enregistrement:', e);
+        console.error('Error while saving:', e);
       }
 
       // Simulate registration
@@ -3397,42 +4189,42 @@
       places = Math.max(8, places - 1);
 
       // Update UI
-      membersEl.textContent = members.toLocaleString('fr-FR');
-      navCountEl.textContent = members.toLocaleString('fr-FR');
-      tokensEl.textContent = tokens.toLocaleString('fr-FR');
+      membersEl.textContent = members.toLocaleString('en-US');
+      navCountEl.textContent = members.toLocaleString('en-US');
+      tokensEl.textContent = tokens.toLocaleString('en-US');
       updateProgress(6);
       updateRarity();
 
-      showToast('✔️ Inscription reçue — Vérifiez votre e-mail');
+      showToast('✔️ Registration received — Check your email');
       closeModal();
     } else if (currentModalType === 'priority') {
-      // Enregistrer l'email et l'entreprise
+      // Save email & company
       try {
         const savedEmails = JSON.parse(localStorage.getItem('smartbanker_priority_emails') || '[]');
         const entry = { email, company: company || '' };
         savedEmails.push(entry);
         localStorage.setItem('smartbanker_priority_emails', JSON.stringify(savedEmails));
-        console.log('Demande prioritaire enregistrée:', entry);
+        console.log('Priority request saved:', entry);
       } catch (e) {
-        console.error('Erreur lors de l\'enregistrement:', e);
+        console.error('Error while saving:', e);
       }
       
-      showToast('✔️ Demande d\'accès prioritaire envoyée — Nous te contacterons sous 48h');
+      showToast('✔️ Priority request sent — We’ll reach out within 48h');
       closeModal();
     } else if (currentModalType === 'reminder') {
-      // Enregistrer l'email pour le rappel
+      // Save reminder
       try {
         const savedEmails = JSON.parse(localStorage.getItem('smartbanker_reminders') || '[]');
         if (!savedEmails.includes(email)) {
           savedEmails.push(email);
           localStorage.setItem('smartbanker_reminders', JSON.stringify(savedEmails));
         }
-        console.log('Rappel enregistré:', email);
+        console.log('Reminder saved:', email);
       } catch (e) {
-        console.error('Erreur lors de l\'enregistrement:', e);
+        console.error('Error while saving:', e);
       }
       
-      showToast("Rappel programmé — Nous t'enverrons un e-mail si une place prioritaire s'ouvre");
+      showToast("Reminder scheduled — We’ll notify you if a priority slot opens");
       closeModal();
     }
     });
@@ -3482,7 +4274,7 @@
     }
   }
 
-  // Initialiser la modal et attacher les boutons
+  // Initialize modal + attach buttons
   function initModalSystem() {
     initModal();
     attachButtonHandlers();
@@ -3491,7 +4283,7 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initModalSystem);
   } else {
-    // Attendre un peu pour s'assurer que le DOM est prêt
+    // Wait a moment to ensure the DOM is ready
     setTimeout(initModalSystem, 100);
   }
 
@@ -3581,10 +4373,10 @@
         if (scrollY >= sectionTop - windowHeight * 0.3 && scrollY < sectionTop + sectionHeight) {
           if (currentSection !== index) {
             currentSection = index;
-            // Ajouter une classe pour les animations
+            // Add a class for animations
             section.classList.add('section-visible');
             
-            // Retirer la classe après un délai
+            // Remove the class after a delay
             setTimeout(() => {
               section.classList.remove('section-visible');
             }, 1000);
@@ -3594,7 +4386,7 @@
     }, { passive: true });
   }
 
-  // Optimiser le parallax pour mobile (réduire l'effet)
+  // Optimize parallax for mobile (reduce the effect)
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
@@ -3604,13 +4396,13 @@
         // Pas de parallax sur mobile pour les performances
         hero.style.transform = 'translateY(0)';
       } else {
-        // Parallax réduit sur desktop
+        // Reduced parallax on desktop
         hero.style.transform = `translateY(${scrolled * 0.15}px)`;
       }
     }
   }, { passive: true });
 
-  // Initialiser l'optimisation mobile
+  // Initialize mobile optimization
   optimizeMobileScroll();
 
   // ===== Hero Background Network Connections =====
@@ -3620,7 +4412,7 @@
     
     if (!particles.length || !particlesContainer) return;
 
-    // Créer un canvas pour les lignes de connexion
+    // Create a canvas for the connection lines
     const canvas = document.createElement('canvas');
     canvas.style.position = 'absolute';
     canvas.style.top = '0';
@@ -3682,13 +4474,13 @@
       animationFrame = requestAnimationFrame(animate);
     }
 
-    // Démarrer l'animation après un court délai
+    // Start the animation after a short delay
     setTimeout(() => {
       animate();
     }, 500);
   }
 
-  // Initialiser le réseau après le chargement
+  // Initialize the network after load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initHeroNetwork);
   } else {
@@ -3696,7 +4488,7 @@
   }
 
   // Initialize
-  console.log('Smartbanker — Rejoins la révolution');
+  console.log('Smartbanker — Join the revolution');
 })();
 </script>
 

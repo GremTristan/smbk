@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartBankers — Flyers & Stickers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg: #020202;
+        --panel: #080808;
+        --panel-alt: #101018;
+        --surface: #0f0f10;
+        --text: #f7f7f7;
+        --muted: #8a8a98;
+        --accent: #ffffff;
+        --border: rgba(255, 255, 255, 0.12);
+        --qr-url: url('https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk');
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 60%), var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font-size: 11px;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: clamp(32px, 6vw, 54px);
+        margin: 0 0 12px;
+        letter-spacing: -0.04em;
+      }
+
+      .lead {
+        color: var(--muted);
+        max-width: 640px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .tabs {
+        background: rgba(255,255,255,0.01);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 32px 24px 40px;
+        backdrop-filter: blur(10px);
+      }
+
+      .tabs input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .tab-labels {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .tab-labels label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.02);
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+
+      .tab-labels label:hover {
+        border-color: rgba(255,255,255,0.25);
+        color: var(--text);
+      }
+
+      #tab-flyer:checked ~ .tab-labels label[for="tab-flyer"],
+      #tab-table:checked ~ .tab-labels label[for="tab-table"],
+      #tab-wall:checked ~ .tab-labels label[for="tab-wall"],
+      #tab-bus:checked ~ .tab-labels label[for="tab-bus"] {
+        background: var(--text);
+        color: #050505;
+        border-color: transparent;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+      }
+
+      .tab-panel {
+        display: none;
+        animation: fadeIn 0.7s ease forwards;
+      }
+
+      #tab-flyer:checked ~ .tab-panels #panel-flyer,
+      #tab-table:checked ~ .tab-panels #panel-table,
+      #tab-wall:checked ~ .tab-panels #panel-wall,
+      #tab-bus:checked ~ .tab-panels #panel-bus {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .flyer-layout,
+      .panel-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .flyer-card {
+        border: 2px solid #fff;
+        padding: 32px;
+        background: #000;
+        width: min(360px, 100%);
+        aspect-ratio: 148 / 210;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      }
+
+      .flyer-card h2 {
+        text-align: center;
+        letter-spacing: 0.4em;
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+
+      .divider {
+        height: 1px;
+        background: rgba(255,255,255,0.35);
+        margin: 12px auto;
+        width: 100%;
+      }
+
+      .warning {
+        font-size: 26px;
+        text-align: center;
+        line-height: 1.3;
+        margin: 18px 0;
+      }
+
+      .flyer-text {
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .cta-box {
+        border: 1px solid rgba(255,255,255,0.3);
+        padding: 16px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+      }
+
+      .qr-box {
+        background: #fff;
+        padding: 14px;
+        margin: 0 auto 12px;
+        width: max-content;
+      }
+
+      .qr-box img {
+        display: block;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+
+      .feature-row {
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        font-size: 11px;
+        text-align: center;
+        letter-spacing: 0.1em;
+      }
+
+      .spec-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+      }
+
+      .spec-card h3 {
+        margin-top: 0;
+        letter-spacing: 0.08em;
+      }
+
+      .spec-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+      }
+
+      .spec-grid span {
+        display: block;
+      }
+
+      .spec-label {
+        font-size: 12px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 4px;
+      }
+
+      .spec-value {
+        font-size: 14px;
+      }
+
+      .mockup-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+      }
+
+      .mockup-card {
+        background: var(--surface);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 20px;
+      }
+
+      .mockup-preview {
+        border: 2px solid #fff;
+        background: #000;
+        min-height: 240px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mockup-preview.circle {
+        border-radius: 999px;
+        height: 320px;
+        width: 320px;
+        margin: 0 auto;
+      }
+
+      .mockup-preview.wide {
+        min-height: 180px;
+        flex-direction: column;
+      }
+
+      .qr-small img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .tagline {
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        margin-top: 12px;
+      }
+
+      .note {
+        margin-top: 20px;
+        padding: 18px;
+        border: 1px dashed rgba(255,255,255,0.2);
+        border-radius: 12px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .flyer-card {
+          width: 100%;
+        }
+
+        .mockup-preview.circle {
+          width: 220px;
+          height: 220px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <p class="eyebrow">SmartBankers — Hong Kong</p>
+        <h1>Flyers & Sticker Mockups</h1>
+        <p class="lead">
+          100% static HTML & CSS showcase of the physical marketing materials distributed to Hong Kong banking professionals.
+          Toggle a tab to reveal layouts, QR placements, and print specifications for each asset.
+        </p>
+      </header>
+
+      <section class="tabs">
+        <input type="radio" name="mockup-tab" id="tab-flyer" checked>
+        <input type="radio" name="mockup-tab" id="tab-table">
+        <input type="radio" name="mockup-tab" id="tab-wall">
+        <input type="radio" name="mockup-tab" id="tab-bus">
+
+        <div class="tab-labels">
+          <label for="tab-flyer">Flyer</label>
+          <label for="tab-table">Table Stickers</label>
+          <label for="tab-wall">Wall Stickers</label>
+          <label for="tab-bus">Bus Posters</label>
+        </div>
+
+        <div class="tab-panels">
+          <section id="panel-flyer" class="tab-panel">
+            <div class="flyer-layout">
+              <article class="flyer-card">
+                <div>
+                  <h2>SMARTBANKERS</h2>
+                  <div class="divider"></div>
+                </div>
+                <p class="warning">⚠️ YOUR AI REPLACEMENT IS ALREADY TRAINED</p>
+                <p class="flyer-text">
+                  Banking professionals in Hong Kong are being replaced by the AI they trained with their own data.
+                  Bank of China. CCB. ICBC. ABC. It is happening now.
+                </p>
+                <div class="cta-box">
+                  TAKE BACK CONTROL OF YOUR DATA.<br>JOIN THE MOVEMENT.
+                </div>
+                <div class="qr-box">
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code to smartbankers.hk">
+                </div>
+                <p class="tagline">SCAN TO JOIN SMARTBANKERS</p>
+                <div class="feature-row">
+                  <div>DATA<br>CONTROL</div>
+                  <div>NFT<br>IDENTITY</div>
+                  <div>NO<br>CENSORSHIP</div>
+                </div>
+              </article>
+
+              <article class="spec-card">
+                <h3>Print Specifications — Flyer</h3>
+                <div class="spec-grid">
+                  <div>
+                    <span class="spec-label">Format</span>
+                    <span class="spec-value">A5 (148mm × 210mm)</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Resolution</span>
+                    <span class="spec-value">300 DPI</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Palette</span>
+                    <span class="spec-value">Black & White only</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Paper</span>
+                    <span class="spec-value">Premium matte stock</span>
+                  </div>
+                </div>
+                <div class="note">
+                  Distribution: Central, Admiralty, Causeway Bay. The CTA block uses a reversible black/white frame to mimic metallic ink without special finishes.
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="panel-table" class="tab-panel">
+            <div class="panel-stack">
+              <div class="mockup-grid">
+                <article class="mockup-card">
+                  <h3>Square — 100mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <p class="tagline">ARE YOU NEXT?</p>
+                      <div class="qr-box qr-small">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                      <p>SMARTBANKERS<br><span class="spec-label">Take Back Control</span></p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Circle — Ø 100mm</h3>
+                  <div class="mockup-preview circle">
+                    <div>
+                      <p class="tagline">AI TOOK YOUR JOB</p>
+                      <div class="qr-box qr-small">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                      <p class="tagline">JOIN THE MOVEMENT</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Rectangle — 150 × 80mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <p>YOU TRAINED THE AI<br>NOW IT REPLACES YOU</p>
+                      <div class="divider"></div>
+                      <p class="spec-label">SmartBankers Community</p>
+                    </div>
+                    <div class="qr-box qr-small">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Mini Square — 70mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <div class="qr-box qr-small">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                      <p class="tagline">SMARTBANKERS</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <article class="spec-card">
+                <h3>Table Sticker Specs</h3>
+                <div class="spec-grid">
+                  <div>
+                    <span class="spec-label">Material</span>
+                    <span class="spec-value">Premium vinyl</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Finish</span>
+                    <span class="spec-value">Matte black</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Waterproof</span>
+                    <span class="spec-value">Yes</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Adhesive</span>
+                    <span class="spec-value">Removable</span>
+                  </div>
+                </div>
+                <div class="note">
+                  Placement: coffee shops, co-working spaces, and bank cafeterias in Central / Admiralty / Causeway Bay. Matte finish avoids glare on QR scans.
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="panel-wall" class="tab-panel">
+            <div class="panel-stack">
+              <div class="mockup-grid">
+                <article class="mockup-card">
+                  <h3>Wall Sticker — 600 × 400mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <p class="warning" style="font-size:20px;">YOUR DATA<br>THEIR PROFIT<br>YOUR JOB LOSS</p>
+                      <p class="spec-label">Bank of China • CCB • ICBC • ABC</p>
+                    </div>
+                    <div class="qr-box qr-small">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Vertical — 400 × 600mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <p class="tagline">STEP 1 • YOU TRAIN THE AI</p>
+                      <p class="tagline">STEP 2 • AI TAKES YOUR ROLE</p>
+                      <div class="divider"></div>
+                      <p class="tagline">YOUR MOVE • JOIN SMARTBANKERS</p>
+                      <div class="qr-box qr-small" style="margin-top:18px;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Wide Banner — 800 × 200mm</h3>
+                  <div class="mockup-preview wide">
+                    <p>AI DOESN'T SLEEP. AI DOESN'T TAKE BREAKS. AI TOOK YOUR JOB.</p>
+                    <p class="spec-label">Tokenize your data • Control your future • Uncensored community</p>
+                    <div class="qr-box qr-small">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Square Statement — 500mm</h3>
+                  <div class="mockup-preview">
+                    <p class="warning" style="font-size:22px;">THE AI YOU BUILT<br>REPLACED YOU</p>
+                    <p class="spec-label">Hong Kong banking professionals</p>
+                    <div class="qr-box">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                    <p class="tagline">SMARTBANKERS</p>
+                  </div>
+                </article>
+              </div>
+
+              <article class="spec-card">
+                <h3>Wall Sticker Specs</h3>
+                <div class="spec-grid">
+                  <div>
+                    <span class="spec-label">Material</span>
+                    <span class="spec-value">Premium vinyl</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Finish</span>
+                    <span class="spec-value">Matte</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Application</span>
+                    <span class="spec-value">Dry / Wet</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Removal</span>
+                    <span class="spec-value">Clean peel</span>
+                  </div>
+                </div>
+                <div class="note">
+                  Strategic placement: office towers in Central, IFC, Cheung Kong Center corridors, co-working spaces, business centers near Bank of China Tower.
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="panel-bus" class="tab-panel">
+            <div class="panel-stack">
+              <div class="mockup-grid">
+                <article class="mockup-card">
+                  <h3>Portrait — 1200 × 1800mm</h3>
+                  <div class="mockup-preview">
+                    <p class="warning" style="font-size:24px;">YOU TRAINED THE AI THAT FIRED YOU</p>
+                    <p class="flyer-text" style="font-size:12px;">
+                      Professionals at Bank of China, CCB, ICBC, and ABC are being replaced by AI systems trained with their own expertise.
+                    </p>
+                    <div class="qr-box">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                    <p class="tagline">SCAN TO JOIN THE MOVEMENT</p>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Landscape — 1800 × 1200mm</h3>
+                  <div class="mockup-preview">
+                    <div>
+                      <p class="warning" style="font-size:20px;">YOUR JOB • YOUR DATA • THEIR AI • YOUR LOSS</p>
+                      <p class="spec-label">No censorship • Tokenize data • NFT identities • Rewards</p>
+                    </div>
+                    <div class="qr-box">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="mockup-card">
+                  <h3>Large Format — 2000 × 1500mm</h3>
+                  <div class="mockup-preview">
+                    <p class="warning" style="font-size:22px;">AI TOOK YOUR JOB — TAKE BACK YOUR DATA</p>
+                    <p class="spec-label">Bank of China • CCB • ICBC • ABC • YOUR BANK?</p>
+                    <div class="qr-box">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
+                    </div>
+                    <p class="tagline">SMARTBANKERS.HK</p>
+                  </div>
+                </article>
+              </div>
+
+              <article class="spec-card">
+                <h3>Bus Poster Specs</h3>
+                <div class="spec-grid">
+                  <div>
+                    <span class="spec-label">Material</span>
+                    <span class="spec-value">Outdoor vinyl</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Finish</span>
+                    <span class="spec-value">UV protected</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Resolution</span>
+                    <span class="spec-value">150 DPI (large format)</span>
+                  </div>
+                  <div>
+                    <span class="spec-label">Weather</span>
+                    <span class="spec-value">All-weather proof</span>
+                  </div>
+                </div>
+                <div class="note">
+                  Priority locations: Central, Admiralty, Causeway Bay, Tsim Sha Tsui bus stops near Bank of China Tower and IFC. Run during rush hours (7‑9am / 6‑8pm).
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+  
