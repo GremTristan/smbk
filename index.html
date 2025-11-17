@@ -143,6 +143,46 @@
     background-clip: text;
   }
 
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--fg);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: var(--muted);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--fg);
+    transition: width 0.2s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 968px) {
+    .nav-links {
+      display: none;
+    }
+  }
+
   @media (max-width: 640px) {
     .nav {
       padding: 16px 20px;
@@ -2496,6 +2536,10 @@
 <header id="header">
   <div class="nav container">
     <div class="brand">Smartbanker</div>
+    <nav class="nav-links">
+      <a href="documentation.html" class="nav-link">Documentation</a>
+      <a href="roadmap.html" class="nav-link">Roadmap</a>
+    </nav>
     <div class="nav-cta">
       <div class="nav-counter">
         <strong id="navCount">3 472</strong>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap d'Acquisition - SmartBankers</title>
+  <link rel="stylesheet" href="roadmap.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="roadmap-viewer">
+    <aside class="roadmap-viewer__sidebar">
+      <div class="roadmap-viewer__sidebar-header">
+        <h2>Roadmap</h2>
+        <button class="roadmap-viewer__close" onclick="window.location.href='index.html'" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="roadmap-viewer__nav" id="toc">
+        <ul id="toc-list">
+          <!-- Table of contents will be generated here -->
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="roadmap-viewer__content">
+      <div class="roadmap-viewer__container" id="content">
+        <!-- Content will be loaded here -->
+        <p>Chargement du contenu...</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Normalize ID function (same as in RoadmapViewer)
+    function normalizeId(text) {
+      return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    // Extract headings from markdown
+    function extractHeadings(markdown) {
+      const headingRegex = /^(#{1,6})\s+(.+)$/gm;
+      const headings = [];
+      let match;
+      
+      while ((match = headingRegex.exec(markdown)) !== null) {
+        const level = match[1].length;
+        const title = match[2].trim();
+        const id = normalizeId(title);
+        headings.push({ level, title, id });
+      }
+      
+      return headings;
+    }
+
+    // Generate TOC
+    function generateTOC(headings) {
+      const tocList = document.getElementById('toc-list');
+      tocList.innerHTML = '';
+      
+      headings.forEach(heading => {
+        const li = document.createElement('li');
+        li.className = `roadmap-viewer__nav-item roadmap-viewer__nav-item--level-${heading.level}`;
+        
+        const button = document.createElement('button');
+        button.className = 'roadmap-viewer__nav-button';
+        button.textContent = heading.title;
+        button.onclick = () => scrollToSection(heading.id);
+        
+        li.appendChild(button);
+        tocList.appendChild(li);
+      });
+    }
+
+    // Scroll to section
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (!element) return;
+      
+      const contentElement = document.querySelector('.roadmap-viewer__content');
+      const isMobile = window.innerWidth <= 768;
+      const offset = 20;
+      
+      if (isMobile) {
+        const elementPosition = element.offsetTop - offset;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      } else if (contentElement) {
+        const contentRect = contentElement.getBoundingClientRect();
+        const elementRect = element.getBoundingClientRect();
+        const scrollPosition = elementRect.top - contentRect.top + contentElement.scrollTop - offset;
+        contentElement.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Update active state
+      document.querySelectorAll('.roadmap-viewer__nav-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Configure marked
+    marked.setOptions({
+      breaks: true,
+      gfm: true
+    });
+
+    // Custom renderer for headings with IDs
+    const renderer = new marked.Renderer();
+    const originalHeading = renderer.heading.bind(renderer);
+    renderer.heading = function(text, level) {
+      const id = normalizeId(text);
+      return `<h${level} id="${id}">${text}</h${level}>`;
+    };
+    marked.setOptions({ renderer });
+
+    // Load markdown and render
+    async function loadRoadmap() {
+      try {
+        // Try to load from local file or use inline content
+        const response = await fetch('public/doc/ROADMAP_GROWTH_AUTOMATION.md');
+        let markdown;
+        
+        if (response.ok) {
+          markdown = await response.text();
+        } else {
+          // Fallback: show message to load markdown manually
+          document.getElementById('content').innerHTML = `
+            <h1>Roadmap d'Acquisition - SmartBankers</h1>
+            <p><strong>Note:</strong> Pour afficher le contenu complet, veuillez charger le fichier markdown.</p>
+            <p>Le fichier markdown se trouve à: <code>public/doc/ROADMAP_GROWTH_AUTOMATION.md</code></p>
+            <p>Vous pouvez utiliser un outil de conversion markdown en HTML pour générer le contenu complet.</p>
+          `;
+          return;
+        }
+        
+        // Extract headings
+        const headings = extractHeadings(markdown);
+        generateTOC(headings);
+        
+        // Convert markdown to HTML
+        const html = marked.parse(markdown);
+        
+        // Wrap code blocks
+        const wrappedHtml = html.replace(
+          /<pre><code class="language-(\w+)">/g,
+          '<pre class="roadmap-viewer__code-block"><code class="language-$1">'
+        ).replace(
+          /<pre><code>/g,
+          '<pre class="roadmap-viewer__code-block"><code>'
+        ).replace(
+          /<code>/g,
+          '<code class="roadmap-viewer__code-inline">'
+        );
+        
+        document.getElementById('content').innerHTML = wrappedHtml;
+        
+        // Update active section on scroll
+        updateActiveSection();
+        const contentElement = document.querySelector('.roadmap-viewer__content');
+        if (contentElement) {
+          contentElement.addEventListener('scroll', updateActiveSection);
+        }
+        window.addEventListener('scroll', updateActiveSection);
+        
+      } catch (error) {
+        console.error('Error loading roadmap:', error);
+        document.getElementById('content').innerHTML = `
+          <h1>Erreur de chargement</h1>
+          <p>Impossible de charger le fichier markdown. Veuillez vérifier que le fichier existe.</p>
+          <p>Erreur: ${error.message}</p>
+        `;
+      }
+    }
+
+    // Update active section on scroll
+    function updateActiveSection() {
+      const headings = Array.from(document.querySelectorAll('.roadmap-viewer__container h1[id], .roadmap-viewer__container h2[id], .roadmap-viewer__container h3[id]'));
+      const contentElement = document.querySelector('.roadmap-viewer__content');
+      const isMobile = window.innerWidth <= 768;
+      const scrollPosition = isMobile 
+        ? window.scrollY + 150 
+        : contentElement ? contentElement.scrollTop + 150 : 0;
+
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const contentRect = contentElement ? contentElement.getBoundingClientRect() : { top: 0 };
+        const headingTop = isMobile ? heading.offsetTop : rect.top - contentRect.top + (contentElement ? contentElement.scrollTop : 0);
+        const headingHeight = heading.offsetHeight;
+
+        if (scrollPosition >= headingTop && scrollPosition < headingTop + headingHeight) {
+          document.querySelectorAll('.roadmap-viewer__nav-button').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.textContent === heading.textContent.trim()) {
+              btn.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+
+    // Load on page load
+    loadRoadmap();
+  </script>
+</body>
+</html>
+
