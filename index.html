@@ -818,6 +818,55 @@
     animation: fadeInUp 0.8s ease-out 0.6s forwards;
   }
 
+  .swiss-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(10, 10, 10, 0.08);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--fg);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-soft);
+    margin: 0 auto 32px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.7s forwards;
+  }
+
+  .swiss-badge span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .swiss-flag-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  }
+
+  .swiss-flag-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .swiss-badge {
+      font-size: 11px;
+      gap: 6px;
+      padding: 8px 14px;
+      letter-spacing: 0.06em;
+    }
+  }
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -1528,6 +1577,49 @@
     color: var(--muted);
     line-height: 1.7;
     margin-bottom: 24px;
+  }
+
+  .footer-swiss {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(10, 10, 10, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    margin-bottom: 32px;
+  }
+
+  .footer-swiss-flag {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+
+  .footer-swiss-flag svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .footer-swiss-copy {
+    text-align: left;
+  }
+
+  .footer-swiss-copy strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .footer-swiss-copy span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
   }
 
   .copyright {
@@ -3066,6 +3158,16 @@
       <div class="eyebrow hero-eyebrow">Web3 Network · Founders Access</div>
       <h1>Lead the revolution.<br>Or watch it outrun you.</h1>
       <p class="hero-lead">Smartbanker gives finance experts back their power. Join the pioneers rewriting the rules.</p>
+      <div class="swiss-badge" aria-label="Backed by a Swiss company">
+        <span class="swiss-flag-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+            <rect width="32" height="32" fill="#FF0000"></rect>
+            <rect x="12" y="6" width="8" height="20" fill="#FFFFFF"></rect>
+            <rect x="6" y="12" width="20" height="8" fill="#FFFFFF"></rect>
+          </svg>
+        </span>
+        <span>Backed by a Swiss company · Built for trust</span>
+      </div>
       
       <div class="hero-ctas">
         <button class="btn btn-pulse" id="heroJoinBtn">Join Smartbanker</button>
@@ -3666,6 +3768,19 @@
     <div class="footer-text">
       Smartbanker — Private network for HR and finance leaders. Confidentiality and governance built in.
     </div>
+    <div class="footer-swiss" aria-label="Backed by a Swiss company">
+      <div class="footer-swiss-flag" aria-hidden="true">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+          <rect width="32" height="32" fill="#FF0000"></rect>
+          <rect x="12" y="6" width="8" height="20" fill="#FFFFFF"></rect>
+          <rect x="6" y="12" width="20" height="8" fill="#FFFFFF"></rect>
+        </svg>
+      </div>
+      <div class="footer-swiss-copy">
+        <strong>Swiss-backed trust</strong>
+        <span>Headquartered governance powering every rollout</span>
+      </div>
+    </div>
     <div class="copyright">
       © 2025 Smartbanker – Copying or staying outside the network means digital fracture. Join or stay sidelined.
       <div class="copyright-warning">Access can close anytime, depending on token usage. Stay connected.</div>
@@ -4171,6 +4286,18 @@
     // Handle by type
     if (currentModalType === 'join') {
       // Save email in localStorage
+      fetch('https://monapi.com/leads', {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify({ email, company, source: currentModalType })
+     })
+     .then(() => {
+       showToast('✔️ Email enregistré, surveille ta boîte');
+       closeModal();
+     })
+     .catch(() => {
+       showModalError('Enregistrement impossible, réessaie plus tard.');
+     });
       try {
         const savedEmails = JSON.parse(localStorage.getItem('smartbanker_emails') || '[]');
         if (!savedEmails.includes(email)) {
