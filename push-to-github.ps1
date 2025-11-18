@@ -1,5 +1,5 @@
 # Script PowerShell pour pousser sur GitHub
-# Utilisation: .\push-to-github.ps1 VOTRE-USERNAME smartbanker-landing
+# Utilisation: .\push-to-github.ps1 VOTRE-USERNAME smartbankers-landing
 
 param(
     [Parameter(Mandatory=$true)]

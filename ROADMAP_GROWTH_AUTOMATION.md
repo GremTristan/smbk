@@ -1,17 +1,17 @@
-# Roadmap d'Acquisition - SmartBankers
+# Roadmap d'Acquisition - SmartBankerss
 ## Guide pour Atteindre 1 000 Utilisateurs
 
 ---
 
-## À Propos de SmartBankers
+## À Propos de SmartBankerss
 
-SmartBankers est un mouvement communautaire pour les professionnels de la finance à Hong Kong, ciblant spécifiquement le marché chinois local (locaux HK, expatriés chinois, employés des banques chinoises à HK). 
+SmartBankerss est un mouvement communautaire pour les professionnels de la finance à Hong Kong, ciblant spécifiquement le marché chinois local (locaux HK, expatriés chinois, employés des banques chinoises à HK). 
 
 ### Le Problème
 
 Les employés de banques à Hong Kong (majoritairement chinois) sont licenciés et remplacés par l'intelligence artificielle qu'ils ont eux-mêmes créée et entraînée avec leurs propres données professionnelles. Les banques chinoises à HK (Bank of China, China Construction Bank, ICBC, Agricultural Bank of China) sont particulièrement touchées.
 
-### La Solution SmartBankers
+### La Solution SmartBankerss
 
 - Portail communautaire (sans censure)
 - Tokénisation des données (reprise de contrôle)
@@ -166,7 +166,7 @@ Nous utilisons le biais cognitif de la peur : la peur de perdre son emploi, la p
 ## Comment Ça Fonctionne
 
 ```
-1. Découverte SmartBankers (LinkedIn, Twitter, Email, Terrain, WeChat)
+1. Découverte SmartBankerss (LinkedIn, Twitter, Email, Terrain, WeChat)
         ↓
 2. Inscription (site web ou QR code)
         ↓
@@ -216,7 +216,7 @@ Nous utilisons le biais cognitif de la peur : la peur de perdre son emploi, la p
 **LinkedIn** :
 - **Cible** : Profils internationaux chinois à HK
 - **Méthode** : Phantombuster → Message personnalisé bilingue
-- **Message** : "Bank Layoffs? AI Replacing You? SmartBankers = Take back control of your data via tokenization + NFT identity"
+- **Message** : "Bank Layoffs? AI Replacing You? SmartBankerss = Take back control of your data via tokenization + NFT identity"
 - **Résultat** : 100-150 users/mois
 - **Limite** : 100 connexions/semaine
 
@@ -266,7 +266,7 @@ Nous utilisons le biais cognitif de la peur : la peur de perdre son emploi, la p
 
 **Message Bienvenue (Bilingue English/Français)** :
 ```
-Welcome to SmartBankers HK!
+Welcome to SmartBankerss HK!
 Community movement for HK finance professionals.
 
 Goal: Take back control of your data
@@ -278,7 +278,7 @@ Rules:
 - Share relevant information
 - No spam
 
-Bienvenue sur SmartBankers HK !
+Bienvenue sur SmartBankerss HK !
 Mouvement communautaire pour les professionnels de la finance à HK.
 
 Objectif : Reprendre le contrôle de vos données
@@ -433,7 +433,7 @@ Règles :
 - [ ] Mettre en place stratégie crédibilité choisie
 
 ### Semaine 2 : Groupe WeChat
-- [ ] Créer groupe WeChat "SmartBankers HK Finance"
+- [ ] Créer groupe WeChat "SmartBankerss HK Finance"
 - [ ] Générer QR code permanent
 - [ ] Configurer bot WeChat (optionnel)
 - [ ] Workflow n8n : Nouveau membre → Airtable
@@ -478,7 +478,7 @@ Règles :
 
 ## Résumé
 
-SmartBankers aide les professionnels de la finance HK à reprendre le contrôle de leurs données via tokénisation et NFT identité.
+SmartBankerss aide les professionnels de la finance HK à reprendre le contrôle de leurs données via tokénisation et NFT identité.
 
 **Stratégie de Crédibilité - Primordiale** :
 - Option 1 : Présence en ligne sérieuse et complète (transparence totale, légitimité)
@@ -501,4 +501,4 @@ SmartBankers aide les professionnels de la finance HK à reprendre le contrôle 
 ---
 
 **Version** : 6.0 (Version Condensée)  
-**Auteur** : Équipe SmartBankers
+**Auteur** : Équipe SmartBankerss

@@ -1,8 +1,8 @@
 import { QRCodeSVG } from "qrcode.react";
 import { AlertTriangle, Brain, TrendingDown } from "lucide-react";
 
-export function SmartBankersWallSticker() {
-  const communityUrl = "https://smartbankers.hk";
+export function SmartBankerssWallSticker() {
+  const communityUrl = "https://smartbankerss.hk";
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -36,7 +36,7 @@ export function SmartBankersWallSticker() {
 
             <div className="flex items-end justify-between">
               <div>
-                <p className="text-white tracking-widest mb-1">SMARTBANKERS</p>
+                <p className="text-white tracking-widest mb-1">SMARTBANKERSS</p>
                 <p className="text-white/60 text-sm">Community Portal</p>
               </div>
               <div className="bg-white p-3">
@@ -70,7 +70,7 @@ export function SmartBankersWallSticker() {
 
                 <div>
                   <p className="text-white text-xs tracking-widest mb-1">YOUR MOVE</p>
-                  <p className="text-white text-sm">Join SmartBankers</p>
+                  <p className="text-white text-sm">Join SmartBankerss</p>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export function SmartBankersWallSticker() {
                   AI DOESN'T SLEEP. AI DOESN'T TAKE BREAKS. AI TOOK YOUR JOB.
                 </h3>
                 <p className="text-white/70 text-sm">
-                  SmartBankers: Tokenize your data. Control your future. Uncensored community for HK finance professionals.
+                  SmartBankerss: Tokenize your data. Control your future. Uncensored community for HK finance professionals.
                 </p>
               </div>
             </div>
@@ -131,7 +131,7 @@ export function SmartBankersWallSticker() {
             </div>
 
             <div>
-              <p className="text-white tracking-widest mb-2">SMARTBANKERS</p>
+              <p className="text-white tracking-widest mb-2">SMARTBANKERSS</p>
               <p className="text-white/60 text-xs">Take back control • No censorship • NFT Identity</p>
             </div>
           </div>

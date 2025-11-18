@@ -1,8 +1,8 @@
 import { QRCodeSVG } from "qrcode.react";
 import { AlertTriangle, Database, TrendingDown, Brain } from "lucide-react";
 
-export function SmartBankersBusAd() {
-  const communityUrl = "https://smartbankers.hk";
+export function SmartBankerssBusAd() {
+  const communityUrl = "https://smartbankerss.hk";
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -67,11 +67,11 @@ export function SmartBankersBusAd() {
                   <QRCodeSVG value={communityUrl} size={200} level="H" fgColor="#000000" bgColor="#FFFFFF" />
                 </div>
                 <p className="text-white tracking-wider mb-2">SCAN TO JOIN THE MOVEMENT</p>
-                <p className="text-white/60 text-sm">smartbankers.hk</p>
+                <p className="text-white/60 text-sm">smartbankerss.hk</p>
               </div>
 
               <div className="border-t border-white/20 pt-6">
-                <p className="text-white text-center tracking-widest text-sm">SMARTBANKERS</p>
+                <p className="text-white text-center tracking-widest text-sm">SMARTBANKERSS</p>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ export function SmartBankersBusAd() {
               </div>
 
               <div>
-                <p className="text-white tracking-widest">SMARTBANKERS</p>
+                <p className="text-white tracking-widest">SMARTBANKERSS</p>
                 <p className="text-white/60 text-sm">Hong Kong Finance Professionals Community</p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export function SmartBankersBusAd() {
               
               <div className="text-center">
                 <p className="text-white/60 text-sm mb-2">Scan to access portal</p>
-                <p className="text-white text-sm">smartbankers.hk</p>
+                <p className="text-white text-sm">smartbankerss.hk</p>
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ export function SmartBankersBusAd() {
                     Hong Kong banking professionals: Join the uncensored community taking control of their professional data and digital identity.
                   </p>
                   <p className="text-white/60 text-sm">
-                    SmartBankers • NFT Identity • Token Rewards • Data Ownership
+                    SmartBankerss • NFT Identity • Token Rewards • Data Ownership
                   </p>
                 </div>
                 
@@ -179,7 +179,7 @@ export function SmartBankersBusAd() {
               </div>
 
               <div className="border-t border-white/20 pt-8">
-                <p className="text-white tracking-widest">SMARTBANKERS.HK</p>
+                <p className="text-white tracking-widest">SMARTBANKERSS.HK</p>
               </div>
             </div>
           </div>

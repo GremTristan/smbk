@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Smartbanker — Join the revolution</title>
-<meta name="description" content="Smartbanker — Web3 network for HR & finance. Reserve your founder pass.">
+<title>Smartbankers — Join the revolution</title>
+<meta name="description" content="Smartbankers — Web3 network for HR & finance. Reserve your founder pass.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -1021,6 +1021,39 @@
     .hero + section.section-visible::before {
       opacity: 1;
     }
+
+    .mockup-tabs {
+      padding: 20px 16px 28px;
+      border-radius: 18px;
+    }
+
+    .mockup-tab-labels {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+
+    .mockup-tab-labels::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mockup-tab-labels label {
+      flex: 0 0 auto;
+      min-width: 140px;
+      padding: 12px 18px;
+    }
+
+    .mockup-flyer-layout {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mockup-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+    }
   }
 
   .section-header {
@@ -1582,21 +1615,21 @@
   .footer-swiss {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 18px;
+    gap: 10px;
+    padding: 10px 16px;
     border-radius: 999px;
     border: 1px solid rgba(10, 10, 10, 0.08);
     background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.16);
     margin-bottom: 32px;
   }
 
   .footer-swiss-flag {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.22);
   }
 
   .footer-swiss-flag svg {
@@ -1620,6 +1653,23 @@
     display: block;
     font-size: 12px;
     color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    .footer-swiss {
+      width: 100%;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+    }
+
+    .footer-swiss-copy strong {
+      font-size: 12px;
+    }
+
+    .footer-swiss-copy span {
+      font-size: 11px;
+    }
   }
 
   .copyright {
@@ -2101,15 +2151,19 @@
   @media (max-width: 640px) {
     /* Optimization for small screens */
     body {
-      scroll-snap-type: y mandatory;
       font-size: 16px; /* Taille de base optimale pour mobile */
       line-height: 1.6;
+      scroll-snap-type: none;
+    }
+
+    main {
+      scroll-snap-type: none;
     }
 
     section {
       padding: 64px 0;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
+      scroll-snap-align: unset;
+      scroll-snap-stop: unset;
     }
 
     /* Improve global readability */
@@ -3070,11 +3124,11 @@
 
 <header id="header">
   <div class="nav container">
-    <div class="brand">Smartbanker</div>
+    <div class="brand">Smartbankers</div>
     <nav class="nav-links">
       <a href="exports/documentation.html" class="nav-link">Documentation</a>
       <a href="exports/roadmap.html" class="nav-link">Roadmap</a>
-      <a href="#mockups" class="nav-link">Mockups</a>
+      <a href="exports/mockup.html" class="nav-link">Mockups</a>
     </nav>
     <nav class="nav-mobile-links">
       <a href="exports/documentation.html" class="nav-mobile-link" aria-label="Documentation" title="Documentation">
@@ -3091,7 +3145,7 @@
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
         </svg>
       </a>
-      <a href="#mockups" class="nav-mobile-link" aria-label="Mockups" title="Mockups">
+      <a href="exports/mockup.html" class="nav-mobile-link" aria-label="Mockups" title="Mockups">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="4" width="18" height="14" rx="2" ry="2"></rect>
           <circle cx="9" cy="9" r="2"></circle>
@@ -3104,7 +3158,7 @@
         <strong id="navCount">3 472</strong>
         <span>founders</span>
       </div>
-      <button class="btn" id="navJoinBtn">Join Smartbanker</button>
+      <button class="btn" id="navJoinBtn">Join Smartbankers</button>
     </div>
   </div>
 </header>
@@ -3157,7 +3211,7 @@
     <div class="hero-content container">
       <div class="eyebrow hero-eyebrow">Web3 Network · Founders Access</div>
       <h1>Lead the revolution.<br>Or watch it outrun you.</h1>
-      <p class="hero-lead">Smartbanker gives finance experts back their power. Join the pioneers rewriting the rules.</p>
+      <p class="hero-lead">Smartbankers gives finance experts back their power. Join the pioneers rewriting the rules.</p>
       <div class="swiss-badge" aria-label="Backed by a Swiss company">
         <span class="swiss-flag-icon" aria-hidden="true">
           <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
@@ -3170,8 +3224,8 @@
       </div>
       
       <div class="hero-ctas">
-        <button class="btn btn-pulse" id="heroJoinBtn">Join Smartbanker</button>
-        <button class="btn-ghost" id="heroPriorityBtn">Request priority access</button>
+        <button class="btn btn-pulse" id="heroJoinBtn">Join Smartbankers</button>
+        <button class="btn btn-ghost" id="heroPriorityBtn">Request priority access</button>
       </div>
 
       <div class="hero-stats">
@@ -3304,7 +3358,7 @@
           <div class="testimonial-author">— Marc, Investor, Paris</div>
         </div>
         <div class="testimonial-card fade-in">
-          <div class="testimonial-text">“Tokenization + governance = disruption. Smartbanker is the future.”</div>
+          <div class="testimonial-text">“Tokenization + governance = disruption. Smartbankers is the future.”</div>
           <div class="testimonial-author">— Leila, HR Tech Founder</div>
         </div>
       </div>
@@ -3315,401 +3369,6 @@
         </div>
         <div style="font-size: 13px; color: var(--muted);">And that’s just the opening move.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- Mockups Section -->
-  <section id="mockups" class="mockup-section fade-in">
-    <div class="container">
-      <div class="mockup-header">
-        <p class="mockup-eyebrow">SmartBankers · Hong Kong</p>
-        <h2>Physical mockups & field assets</h2>
-        <p class="mockup-lead">
-          Flyers, stickers, and bus shelters ready to print for Central, Admiralty, and Kowloon Bay.
-          Browse every variant, QR placement, and print spec to activate the field in under 24 hours.
-        </p>
-      </div>
-
-      <section class="mockup-tabs" aria-label="SmartBankers physical mockups">
-        <input type="radio" name="mockup-tab" id="mockup-tab-flyer" checked>
-        <input type="radio" name="mockup-tab" id="mockup-tab-table">
-        <input type="radio" name="mockup-tab" id="mockup-tab-wall">
-        <input type="radio" name="mockup-tab" id="mockup-tab-bus">
-
-        <div class="mockup-tab-labels">
-          <label for="mockup-tab-flyer">Flyer</label>
-          <label for="mockup-tab-table">Table stickers</label>
-          <label for="mockup-tab-wall">Wall stickers</label>
-          <label for="mockup-tab-bus">Bus shelters</label>
-        </div>
-
-        <div class="mockup-tab-panels">
-          <section id="mockup-panel-flyer" class="mockup-tab-panel" aria-labelledby="mockup-tab-flyer">
-            <div class="mockup-flyer-layout">
-              <article class="mockup-flyer-card">
-                <div>
-                  <h2>SMARTBANKERS</h2>
-                  <div class="mockup-divider"></div>
-                </div>
-                <p class="mockup-warning">&#x26A0;&#xFE0E; YOUR AI REPLACEMENT IS ALREADY TRAINED</p>
-                <p class="mockup-text">
-                  Banking professionals in Hong Kong are being replaced by the AI they trained with their own data.
-                  Bank of China. CCB. ICBC. ABC. It is happening now.
-                </p>
-                <div class="mockup-cta-box">
-                  TAKE BACK CONTROL OF YOUR DATA.<br>JOIN THE MOVEMENT.
-                </div>
-                <div class="mockup-qr-box">
-                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code vers smartbankers.hk">
-                </div>
-                <p class="mockup-tagline">SCAN TO JOIN SMARTBANKERS</p>
-                <div class="mockup-feature-row">
-                  <div class="mockup-feature">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                      <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
-                      <path d="M3 12A9 3 0 0 0 21 12"></path>
-                    </svg>
-                    <span>Data<br>Control</span>
-                  </div>
-                  <div class="mockup-feature">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                    </svg>
-                    <span>NFT<br>Identity</span>
-                  </div>
-                  <div class="mockup-feature">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                      <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                    </svg>
-                    <span>No<br>Censorship</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="mockup-spec-card">
-                <h3>Print specs — Flyer</h3>
-                <div class="mockup-spec-grid">
-                  <div>
-                    <span class="mockup-spec-label">Format</span>
-                    <span class="mockup-spec-value">148mm × 210mm</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Resolution</span>
-                    <span class="mockup-spec-value">300 DPI</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Palette</span>
-                    <span class="mockup-spec-value">Black & White only</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Paper</span>
-                    <span class="mockup-spec-value">Premium matte stock</span>
-                  </div>
-                </div>
-                <div class="mockup-note">
-                  Distribution: Central, Admiralty, Causeway Bay. The CTA block uses an inverted outline to mimic metallic ink without special finishes.
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section id="mockup-panel-table" class="mockup-tab-panel" aria-labelledby="mockup-tab-table">
-            <div class="mockup-panel-stack">
-              <div class="mockup-grid">
-                <article class="mockup-card">
-                  <h3>Square — 100mm</h3>
-                  <div class="mockup-preview">
-                    <div>
-                      <div class="mockup-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
-                          <path d="M12 9v4"></path>
-                          <path d="M12 17h.01"></path>
-                        </svg>
-                      </div>
-                      <p class="mockup-tagline">ARE YOU NEXT?</p>
-                      <div class="mockup-qr-box mockup-qr-small">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                      </div>
-                      <p>SMARTBANKERS<br><span class="mockup-spec-label">Take Back Control</span></p>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Circle — Ø 100mm</h3>
-                  <div class="mockup-preview circle">
-                    <div>
-                      <div class="mockup-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                          <circle cx="12" cy="12" r="6"></circle>
-                          <path d="M12 6V2M12 22v-4M6 12H2M22 12h-4M5 5l2.5 2.5M16.5 16.5 19 19M5 19l2.5-2.5M16.5 7.5 19 5"></path>
-                        </svg>
-                      </div>
-                      <p class="mockup-tagline">AI TOOK YOUR JOB</p>
-                      <div class="mockup-qr-box mockup-qr-small">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                      </div>
-                      <p class="mockup-tagline">JOIN THE MOVEMENT</p>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Rectangle — 150 × 80mm</h3>
-                  <div class="mockup-preview">
-                    <div>
-                      <div class="mockup-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                          <rect x="3" y="8" width="18" height="13" rx="2"></rect>
-                          <path d="M8 8V5a4 4 0 0 1 8 0v3"></path>
-                          <path d="M7 13h10"></path>
-                        </svg>
-                      </div>
-                      <p>YOU TRAINED THE AI<br>NOW IT REPLACES YOU</p>
-                      <div class="mockup-divider"></div>
-                      <p class="mockup-spec-label">SmartBankers Community</p>
-                    </div>
-                    <div class="mockup-qr-box mockup-qr-small">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Mini square — 70mm</h3>
-                  <div class="mockup-preview">
-                    <div>
-                      <div class="mockup-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                          <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
-                          <path d="M3 12A9 3 0 0 0 21 12"></path>
-                        </svg>
-                      </div>
-                      <div class="mockup-qr-box mockup-qr-small">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                      </div>
-                      <p class="mockup-tagline">SMARTBANKERS</p>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <article class="mockup-spec-card">
-                <h3>Sticker specs</h3>
-                <div class="mockup-spec-grid">
-                  <div>
-                    <span class="mockup-spec-label">Material</span>
-                    <span class="mockup-spec-value">Premium vinyl</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Finish</span>
-                    <span class="mockup-spec-value">Matte black anti-glare</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Waterproof</span>
-                    <span class="mockup-spec-value">Yes</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Adhesive</span>
-                    <span class="mockup-spec-value">Removable</span>
-                  </div>
-                </div>
-                <div class="mockup-note">
-                  Placement: coffee shops, co-working hubs, bank cafeterias (Central / Admiralty / Causeway Bay). Matte finish prevents glare during QR scans.
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section id="mockup-panel-wall" class="mockup-tab-panel" aria-labelledby="mockup-tab-wall">
-            <div class="mockup-panel-stack">
-              <div class="mockup-grid">
-                <article class="mockup-card">
-                  <h3>Wall sticker — 600 × 400mm</h3>
-                  <div class="mockup-preview">
-                    <div>
-                      <p class="mockup-warning" style="font-size:20px;">YOUR DATA<br>THEIR PROFIT<br>YOUR JOB LOSS</p>
-                      <p class="mockup-spec-label">Bank of China • CCB • ICBC • ABC</p>
-                    </div>
-                    <div class="mockup-qr-box mockup-qr-small">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Vertical — 400 × 600mm</h3>
-                  <div class="mockup-preview">
-                    <div>
-                      <div class="mockup-icon brain-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M12 18V5"></path>
-                          <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path>
-                          <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"></path>
-                          <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"></path>
-                          <path d="M18 18a4 4 0 0 0 2-7.464"></path>
-                          <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"></path>
-                          <path d="M6 18a4 4 0 0 1-2-7.464"></path>
-                          <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"></path>
-                        </svg>
-                      </div>
-                      <p class="mockup-tagline">STEP 1 • YOU TRAIN THE AI</p>
-                      <p class="mockup-tagline">STEP 2 • AI TAKES YOUR ROLE</p>
-                      <div class="mockup-divider"></div>
-                      <p class="mockup-tagline">YOUR MOVE • JOIN SMARTBANKERS</p>
-                      <div class="mockup-qr-box mockup-qr-small" style="margin-top:18px;">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card mockup-card--alert">
-                  <h3>Warning panel — 300 × 300mm</h3>
-                  <div class="mockup-preview alert">
-                    <div>
-                      <div class="mockup-icon">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
-                          <path d="M12 9v4"></path>
-                          <path d="M12 17h.01"></path>
-                        </svg>
-                      </div>
-                      <p class="mockup-warning" style="color:#050505; font-size:18px;">ATTENTION — AI ALERT ZONE</p>
-                      <p class="mockup-spec-label" style="color:#050505;">Place near elevator doors & badge scanners</p>
-                      <div class="mockup-qr-box">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Wide banner — 800 × 200mm</h3>
-                  <div class="mockup-preview wide">
-                    <p>AI DOESN'T SLEEP. AI DOESN'T TAKE BREAKS. AI TOOK YOUR JOB.</p>
-                    <p class="mockup-spec-label">Tokenize your data • Control your future • Uncensored community</p>
-                    <div class="mockup-qr-box mockup-qr-small">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Square statement — 500mm</h3>
-                  <div class="mockup-preview">
-                    <p class="mockup-warning" style="font-size:22px;">THE AI YOU BUILT<br>REPLACED YOU</p>
-                    <p class="mockup-spec-label">Hong Kong banking professionals</p>
-                    <div class="mockup-qr-box">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                    </div>
-                    <p class="mockup-tagline">SMARTBANKERS</p>
-                  </div>
-                </article>
-              </div>
-
-              <article class="mockup-spec-card">
-                <h3>Wall sticker specs</h3>
-                <div class="mockup-spec-grid">
-                  <div>
-                    <span class="mockup-spec-label">Material</span>
-                    <span class="mockup-spec-value">Premium vinyl</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Finish</span>
-                    <span class="mockup-spec-value">Matte</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Application</span>
-                    <span class="mockup-spec-value">Dry / Wet</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Removal</span>
-                    <span class="mockup-spec-value">Clean peel</span>
-                  </div>
-                </div>
-                <div class="mockup-note">
-                  Placement: IFC, Cheung Kong Center, MTR Hong Kong Station escalators, co-working spaces near Bank of China Tower.
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section id="mockup-panel-bus" class="mockup-tab-panel" aria-labelledby="mockup-tab-bus">
-            <div class="mockup-panel-stack">
-              <div class="mockup-grid">
-                <article class="mockup-card">
-                  <h3>Portrait — 1200 × 1800mm</h3>
-                  <div class="mockup-preview">
-                    <p class="mockup-warning" style="font-size:24px;">YOU TRAINED THE AI THAT FIRED YOU</p>
-                    <p class="mockup-text" style="font-size:12px;">
-                      Professionals at Bank of China, CCB, ICBC, and ABC are being replaced by AI systems trained with their own expertise.
-                    </p>
-                    <div class="mockup-qr-box">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                    </div>
-                    <p class="mockup-tagline">SCAN TO JOIN THE MOVEMENT</p>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Landscape — 1800 × 1200mm</h3>
-                  <div class="mockup-preview">
-                    <div>
-                      <p class="mockup-warning" style="font-size:20px;">YOUR JOB • YOUR DATA • THEIR AI • YOUR LOSS</p>
-                      <p class="mockup-spec-label">No censorship • Tokenize data • NFT identities • Rewards</p>
-                    </div>
-                    <div class="mockup-qr-box">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fsmartbankers.hk" alt="QR code">
-                    </div>
-                  </div>
-                </article>
-
-                <article class="mockup-card">
-                  <h3>Urban panels — 800 × 1200mm</h3>
-                  <div class="mockup-preview">
-                    <div class="mockup-placeholder">
-                      <p class="mockup-spec-label">Concept currently iterating</p>
-                      <p class="mockup-text">Final artboard shipping soon.</p>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <article class="mockup-spec-card">
-                <h3>Bus shelter specs</h3>
-                <div class="mockup-spec-grid">
-                  <div>
-                    <span class="mockup-spec-label">Format</span>
-                    <span class="mockup-spec-value">1200 × 1800mm & 1800 × 1200mm</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Substrate</span>
-                    <span class="mockup-spec-value">Backlit PET</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Finish</span>
-                    <span class="mockup-spec-value">Matte anti-glare</span>
-                  </div>
-                  <div>
-                    <span class="mockup-spec-label">Zones</span>
-                    <span class="mockup-spec-value">Central, Wan Chai, Kowloon Bay</span>
-                  </div>
-                </div>
-                <div class="mockup-note">
-                  Use dynamic QR codes to route per campaign (Waitlist, Invest, Job Board) without reprinting.
-                </div>
-              </article>
-            </div>
-          </section>
-        </div>
-      </section>
     </div>
   </section>
 
@@ -3752,7 +3411,7 @@
       <p>Where will you stand when banks stop recruiting and start tokenizing?</p>
       <div class="engagement-btns">
         <button class="btn" id="engagementYesBtn">Yes — I’m in</button>
-        <button class="btn-ghost" id="engagementLaterBtn">Remind me</button>
+        <button class="btn btn-ghost" id="engagementLaterBtn">Remind me</button>
       </div>
     </div>
   </section>
@@ -3760,13 +3419,13 @@
 
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <button class="btn btn-pulse" id="stickyJoinBtn">Join Smartbanker</button>
+  <button class="btn btn-pulse" id="stickyJoinBtn">Join Smartbankers</button>
 </div>
 
 <footer>
   <div class="footer-content">
     <div class="footer-text">
-      Smartbanker — Private network for HR and finance leaders. Confidentiality and governance built in.
+      Smartbankers — Private network for HR and finance leaders. Confidentiality and governance built in.
     </div>
     <div class="footer-swiss" aria-label="Backed by a Swiss company">
       <div class="footer-swiss-flag" aria-hidden="true">
@@ -3782,7 +3441,7 @@
       </div>
     </div>
     <div class="copyright">
-      © 2025 Smartbanker – Copying or staying outside the network means digital fracture. Join or stay sidelined.
+      © 2025 Smartbankers – Copying or staying outside the network means digital fracture. Join or stay sidelined.
       <div class="copyright-warning">Access can close anytime, depending on token usage. Stay connected.</div>
     </div>
   </div>
@@ -3850,6 +3509,7 @@
   const rankLabelEl = document.getElementById('rankLabel');
   const headerEl = document.getElementById('header');
   const stickyCtaEl = document.getElementById('stickyCta');
+  const heroSection = document.querySelector('.hero');
 
   // ===== Counter Animations =====
   function animateCounter(el, start, end, duration = 1000) {
@@ -4230,12 +3890,12 @@
         return;
       }
       try {
-        const savedEmails = JSON.parse(localStorage.getItem('smartbanker_emails') || '[]');
+        const savedEmails = JSON.parse(localStorage.getItem('smartbankers_emails') || '[]');
         if (!savedEmails.includes(email)) {
           savedEmails.push(email);
-          localStorage.setItem('smartbanker_emails', JSON.stringify(savedEmails));
+          localStorage.setItem('smartbankers_emails', JSON.stringify(savedEmails));
         }
-        localStorage.setItem('smartbanker_last_email', email);
+        localStorage.setItem('smartbankers_last_email', email);
         console.log('Email saved:', email);
       } catch (e) {
         console.error('Error while saving:', e);
@@ -4272,10 +3932,10 @@
       }
       // Save email & company
       try {
-        const savedEmails = JSON.parse(localStorage.getItem('smartbanker_priority_emails') || '[]');
+        const savedEmails = JSON.parse(localStorage.getItem('smartbankers_priority_emails') || '[]');
         const entry = { email, company: company || '' };
         savedEmails.push(entry);
-        localStorage.setItem('smartbanker_priority_emails', JSON.stringify(savedEmails));
+        localStorage.setItem('smartbankers_priority_emails', JSON.stringify(savedEmails));
         console.log('Priority request saved:', entry);
       } catch (e) {
         console.error('Error while saving:', e);
@@ -4286,10 +3946,10 @@
     } else if (currentModalType === 'reminder') {
       // Save reminder
       try {
-        const savedEmails = JSON.parse(localStorage.getItem('smartbanker_reminders') || '[]');
+        const savedEmails = JSON.parse(localStorage.getItem('smartbankers_reminders') || '[]');
         if (!savedEmails.includes(email)) {
           savedEmails.push(email);
-          localStorage.setItem('smartbanker_reminders', JSON.stringify(savedEmails));
+          localStorage.setItem('smartbankers_reminders', JSON.stringify(savedEmails));
         }
         console.log('Reminder saved:', email);
       } catch (e) {
@@ -4377,6 +4037,34 @@
     observer.observe(el);
   });
 
+  function updateStickyCta(scrollY = window.pageYOffset) {
+    if (!stickyCtaEl) return;
+
+    const isMobileViewport = window.innerWidth <= 968;
+
+    if (isMobileViewport) {
+      if (!heroSection) {
+        stickyCtaEl.classList.add('show');
+        return;
+      }
+
+      const heroRect = heroSection.getBoundingClientRect();
+      const heroOutOfView = heroRect.bottom < window.innerHeight * 0.35;
+
+      if (heroOutOfView) {
+        stickyCtaEl.classList.add('show');
+      } else {
+        stickyCtaEl.classList.remove('show');
+      }
+    } else {
+      if (scrollY > 400) {
+        stickyCtaEl.classList.add('show');
+      } else {
+        stickyCtaEl.classList.remove('show');
+      }
+    }
+  }
+
   // ===== Header Scroll Effect =====
   let lastScroll = 0;
   window.addEventListener('scroll', () => {
@@ -4388,19 +4076,16 @@
       headerEl.classList.remove('scrolled');
     }
 
-    // Show/hide sticky CTA
-    if (window.innerWidth < 968) {
-      stickyCtaEl.classList.add('show');
-    } else {
-      if (currentScroll > 400) {
-        stickyCtaEl.classList.add('show');
-      } else {
-        stickyCtaEl.classList.remove('show');
-      }
-    }
+    updateStickyCta(currentScroll);
 
     lastScroll = currentScroll;
   });
+
+  window.addEventListener('resize', () => {
+    updateStickyCta(window.pageYOffset);
+  });
+
+  updateStickyCta(window.pageYOffset);
 
   // ===== Keyboard Shortcut =====
   document.addEventListener('keydown', (e) => {
@@ -4560,7 +4245,7 @@
   }
 
   // Initialize
-  console.log('Smartbanker — Join the revolution');
+  console.log('Smartbankers — Join the revolution');
 })();
 </script>
 

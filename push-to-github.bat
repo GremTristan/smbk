@@ -1,13 +1,13 @@
 @echo off
 REM Script batch pour pousser sur GitHub
-REM Utilisation: push-to-github.bat VOTRE-USERNAME smartbanker-landing
+REM Utilisation: push-to-github.bat VOTRE-USERNAME smartbankers-landing
 
 if "%1"=="" (
     echo.
     echo ❌ Erreur: Nom d'utilisateur GitHub requis
     echo.
     echo Utilisation: push-to-github.bat VOTRE-USERNAME NOM-DU-REPO
-    echo Exemple: push-to-github.bat mon-username smartbanker-landing
+    echo Exemple: push-to-github.bat mon-username smartbankers-landing
     echo.
     pause
     exit /b 1
@@ -18,7 +18,7 @@ if "%2"=="" (
     echo ❌ Erreur: Nom du dépôt requis
     echo.
     echo Utilisation: push-to-github.bat VOTRE-USERNAME NOM-DU-REPO
-    echo Exemple: push-to-github.bat mon-username smartbanker-landing
+    echo Exemple: push-to-github.bat mon-username smartbankers-landing
     echo.
     pause
     exit /b 1

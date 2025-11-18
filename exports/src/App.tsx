@@ -1,7 +1,7 @@
-import { SmartBankersFlyer } from "./components/SmartBankersFlyer";
-import { SmartBankersTableSticker } from "./components/SmartBankersTableSticker";
-import { SmartBankersWallSticker } from "./components/SmartBankersWallSticker";
-import { SmartBankersBusAd } from "./components/SmartBankersBusAd";
+import { SmartBankerssFlyer } from "./components/SmartBankerssFlyer";
+import { SmartBankerssTableSticker } from "./components/SmartBankerssTableSticker";
+import { SmartBankerssWallSticker } from "./components/SmartBankerssWallSticker";
+import { SmartBankerssBusAd } from "./components/SmartBankerssBusAd";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
     <div className="min-h-screen bg-black p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 text-center">
-          <h1 className="text-white mb-2">SmartBankers - Marketing Materials</h1>
+          <h1 className="text-white mb-2">SmartBankerss - Marketing Materials</h1>
           <p className="text-slate-400">Premium minimalist designs for Hong Kong banking community</p>
         </div>
 
@@ -22,19 +22,19 @@ export default function App() {
           </TabsList>
           
           <TabsContent value="flyer">
-            <SmartBankersFlyer />
+            <SmartBankerssFlyer />
           </TabsContent>
           
           <TabsContent value="table">
-            <SmartBankersTableSticker />
+            <SmartBankerssTableSticker />
           </TabsContent>
           
           <TabsContent value="wall">
-            <SmartBankersWallSticker />
+            <SmartBankerssWallSticker />
           </TabsContent>
           
           <TabsContent value="bus">
-            <SmartBankersBusAd />
+            <SmartBankerssBusAd />
           </TabsContent>
         </Tabs>
       </div>

@@ -1,4 +1,4 @@
-# Smartbanker - Landing Page
+# Smartbankers - Landing Page
 
 Landing page Web3 pour professionnels RH & acteurs financiers.
 

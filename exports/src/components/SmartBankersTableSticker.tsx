@@ -1,8 +1,8 @@
 import { QRCodeSVG } from "qrcode.react";
 import { AlertTriangle, Database } from "lucide-react";
 
-export function SmartBankersTableSticker() {
-  const communityUrl = "https://smartbankers.hk";
+export function SmartBankerssTableSticker() {
+  const communityUrl = "https://smartbankerss.hk";
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -21,7 +21,7 @@ export function SmartBankersTableSticker() {
             </div>
             
             <div className="text-center">
-              <p className="text-white text-xs tracking-wider">SMARTBANKERS</p>
+              <p className="text-white text-xs tracking-wider">SMARTBANKERSS</p>
               <p className="text-white/60 text-xs mt-1">Take Back Control</p>
             </div>
           </div>
@@ -57,7 +57,7 @@ export function SmartBankersTableSticker() {
               </p>
               <div className="w-12 h-px bg-white mb-4"></div>
               <p className="text-white/80 text-xs">
-                SmartBankers Community
+                SmartBankerss Community
               </p>
             </div>
             
@@ -77,7 +77,7 @@ export function SmartBankersTableSticker() {
             
             <div className="text-center">
               <Database className="w-6 h-6 text-white mx-auto mb-2" strokeWidth={1} />
-              <p className="text-white text-xs tracking-widest">SMARTBANKERS</p>
+              <p className="text-white text-xs tracking-widest">SMARTBANKERSS</p>
             </div>
           </div>
         </div>

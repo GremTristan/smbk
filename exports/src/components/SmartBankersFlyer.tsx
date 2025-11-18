@@ -1,8 +1,8 @@
 import { QRCodeSVG } from "qrcode.react";
 import { AlertTriangle, Database, Shield, Users } from "lucide-react";
 
-export function SmartBankersFlyer() {
-  const communityUrl = "https://smartbankers.hk";
+export function SmartBankerssFlyer() {
+  const communityUrl = "https://smartbankerss.hk";
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -11,7 +11,7 @@ export function SmartBankersFlyer() {
         {/* Header */}
         <div className="text-center mb-6">
           <div className="inline-block">
-            <h2 className="text-white tracking-widest mb-2">SMARTBANKERS</h2>
+            <h2 className="text-white tracking-widest mb-2">SMARTBANKERSS</h2>
             <div className="w-full h-px bg-white"></div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export function SmartBankersFlyer() {
           </div>
 
           <p className="text-white text-center text-xs tracking-wider">
-            SCAN TO JOIN SMARTBANKERS
+            SCAN TO JOIN SMARTBANKERSS
           </p>
         </div>
 
