@@ -2178,16 +2178,15 @@
     }
 
     .hero {
-      padding: 80px 16px 50px;
-      min-height: 100vh;
-      min-height: 100dvh;
+      padding: 72px 16px 36px;
+      min-height: auto;
       text-align: center;
     }
 
     h1 {
-      font-size: clamp(30px, 8vw, 44px);
-      line-height: 1.08;
-      margin-bottom: 18px;
+      font-size: clamp(28px, 8vw, 40px);
+      line-height: 1.05;
+      margin-bottom: 14px;
     }
 
     h2 {
@@ -2199,18 +2198,22 @@
     }
 
     .hero-lead {
-      font-size: 16px;
-      margin-bottom: 32px;
-      line-height: 1.6;
-      padding: 0 6px;
+      font-size: 15px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+      padding: 0 4px;
       text-align: center;
+    }
+
+    .swiss-badge {
+      margin: 0 auto 20px;
     }
 
     .hero-ctas {
       flex-direction: column;
       gap: 10px;
       width: 100%;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
     .hero-ctas .btn {
@@ -3163,7 +3166,7 @@
         <strong id="navCount">3 472</strong>
         <span>founders</span>
       </div>
-      <button class="btn" id="navJoinBtn">Join Smartbankers</button>
+
     </div>
   </div>
 </header>
@@ -3515,6 +3518,7 @@
   const headerEl = document.getElementById('header');
   const stickyCtaEl = document.getElementById('stickyCta');
   const heroSection = document.querySelector('.hero');
+  const secondSection = document.querySelector('#why-join');
 
   // ===== Counter Animations =====
   function animateCounter(el, start, end, duration = 1000) {
@@ -4056,7 +4060,13 @@
       const heroRect = heroSection.getBoundingClientRect();
       const heroOutOfView = heroRect.bottom < window.innerHeight * 0.35;
 
-      if (heroOutOfView) {
+      let secondSectionReached = heroOutOfView;
+      if (secondSection) {
+        const secondRect = secondSection.getBoundingClientRect();
+        secondSectionReached = secondRect.top <= window.innerHeight * 0.9;
+      }
+
+      if (secondSectionReached) {
         stickyCtaEl.classList.add('show');
       } else {
         stickyCtaEl.classList.remove('show');
